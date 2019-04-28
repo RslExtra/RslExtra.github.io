@@ -136,7 +136,6 @@ println("total: " + res.sumByProp("value"));
 import bankInter;
 
 var db_client = Tbfile("client.dbt", "R",  0, null, "bank.def");
-
 var arr = StreamOf(db_client)                    // Создаём stream из файла бд
             .rewind()
             .map("Tupple2(it.Name_Client, it.Code)")
@@ -159,7 +158,6 @@ end;
 import bankInter;
 
 var db_client = Tbfile("client.dbt", "R",  0, null, "bank.def");
-
 var arr = StreamOf(db_client)                    // Создаём stream из файла бд
             .rewind()
             .map("Tupple2(it.Name_Client, it.Code)")
