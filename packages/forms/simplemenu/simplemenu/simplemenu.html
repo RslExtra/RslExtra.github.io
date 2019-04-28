@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс SimpleMenu</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/forms/index.html" title="Forms">Forms</a> /<a href="../../../../packages/forms/simplemenu/index.html" title="SimpleMenu.mac">SimpleMenu.mac</a> /<a href="../../../../packages/forms/simplemenu/simplemenu/simplemenu.html" title="SimpleMenu">SimpleMenu</a>
+</div>
+</div>
+<div class="content">
+<h2>SimpleMenu</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">SimpleMenu</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс, реализация простого скроллинга. Реализован на базе классического RSL меню <a href="#" title="#">menu</a>.
+</p><p>
+Преимущества:
+</p>
+<ul>
+<li> Оперирует не строками, а пользовательскими объектами.</li>
+<li> Удобно настраивается для вывода меню с несколькими столбцами (по полям объекта)</li>
+<li> Может возвращать не только выбранный индекс, но и объект, ему соответствующий.</li>
+</ul>
+<p>
+</p><p>
+</p><p>
+Пример использования:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "..\\Mac\\Extra\\Forms\\SimpleMenu.mac";
+import "..\\Mac\\Extra\\Utils\\SArray.mac";
+
+Class BranchClass(_FNCash, _desc, _city)
+   var FNCash = _FNCash;
+   var shortName = _desc;
+   var fullName = _desc;
+   var city = _city;
+
+   Macro equals(oth) : Bool
+      return (FNCash == oth.FNCash);
+   End;
+End;
+
+var branches = SArray(BranchClass(1, "Головной офис", "г. Москва"),
+                      BranchClass(12, "Дополнительный офис №14", "г. Бобруйск"),
+                      BranchClass(23, "Дополнительный офис №23", "г. Владивосток")
+                     );
+
+var mn = SimpleMenu()
+            .setTitle("Выберите подразделение")
+            .setCol("FNCash", 3)
+            .setCol("shortName", 40)
+            .setCol("city", 20)
+            .addArray(branches);
+var choice = mn.valueOf();
+if (choice == null)
+   println("Отмена задания");
+   exit(0);
+end;
+
+println("Вы выбрали " + choice.fullName );
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\Mac\\Extra\\Forms\\SimpleMenu.mac";
+import "..\\Mac\\Extra\\Utils\\SArray.mac";
+
+Class BranchClass(_FNCash, _desc, _city)
+   var FNCash = _FNCash;
+   var shortName = _desc;
+   var fullName = _desc;
+   var city = _city;
+
+   Macro equals(oth) : Bool
+      return (FNCash == oth.FNCash);
+   End;
+End;
+
+var branches = SArray(BranchClass(1, "Головной офис", "г. Москва"),
+                      BranchClass(12, "Дополнительный офис №14", "г. Бобруйск"),
+                      BranchClass(23, "Дополнительный офис №23", "г. Владивосток")
+                     );
+
+var mn = SimpleMenu()
+            .setTitle("Выберите подразделение")
+            .setCol("FNCash", 3)
+            .setCol("shortName", 40)
+            .setCol("city", 20)
+            .addArray(branches);
+var choice = mn.valueOf();
+if (choice == null)
+   println("Отмена задания");
+   exit(0);
+end;
+
+println("Вы выбрали " + choice.fullName );
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<!--================== Variables Section ====================-->
+<h3>Переменные класса</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/forms/simplemenu/simplemenu/choice.html" title="">choice</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">choice</span>;</code>
+</div>
+<div class="description">
+<p>
+Ссылка на объект, который был выбран последним
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/forms/simplemenu/simplemenu/divider.html" title="">divider</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">divider</span>;</code>
+</div>
+<div class="description">
+<p>
+Разделитель столбцов меню
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/forms/simplemenu/simplemenu/postfix.html" title="">postfix</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">postfix</span>;</code>
+</div>
+<div class="description">
+<p>
+Постфикс строки меню
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/forms/simplemenu/simplemenu/prefix.html" title="">prefix</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">prefix</span>;</code>
+</div>
+<div class="description">
+<p>
+Префикс строки меню
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/add.html" title="">add</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">add</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">obj</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет объект <b>obj</b> к списку выбора
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/addarray.html" title="">addArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">addArray</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет массив объектов <b>arr</b> к списку выбора
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/getwidth.html" title="">getWidth</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getWidth</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает ширину в символах
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/indexof.html" title="">indexOf</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">indexOf</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вызывает меню, и после выбора пользователя возвращает индекс выбранной строки или <code class="intext">-1</code>, если выбор не был сделан
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setactiveline.html" title="">setActiveLine</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setActiveLine</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_n</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает активную строку
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setactiveobject.html" title="">setActiveObject</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setActiveObject</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">obj</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает активной строку с объектом равным <b>obj</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setcol.html" title="">setCol</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setCol</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">propName</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">ssize</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает колонку; <b>propName</b> задает имя поля объекта, откуда будет браться значение, <b>ssize</b> устанавливает размер колонки в символах
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setcoord.html" title="">setCoord</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setCoord</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_x</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_y</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает координаты левого верхнего угла
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setdivider.html" title="">setDivider</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setDivider</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_divider</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает разделитель столбцов меню
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setmessage.html" title="">setMessage</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setMessage</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_Message</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает сообщение внизу экрана  <b>_Message</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setprefix.html" title="">setPrefix</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setPrefix</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_prefix</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает префикс строки меню
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setprefix.html" title="">setPrefix</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setPrefix</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_postfix</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает постфикс строки меню
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/settitle.html" title="">setTitle</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setTitle</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_title</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает заголовок меню <b>_title</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/setx.html" title="">setX</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setX</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_x</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает координату x
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/sety.html" title="">setY</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setY</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_y</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает координату y
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/forms/simplemenu/simplemenu/valueof.html" title="">valueOf</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">valueOf</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вызывает меню, и после выбора пользователя возвращает объект выбранной строки или <code class="intext">null</code>, если выбор не был сделан
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

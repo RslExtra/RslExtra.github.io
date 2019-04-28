@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс CollectorsClass</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/streamapi/index.html" title="StreamApi">StreamApi</a> /<a href="../../../../packages/streamapi/collectors/index.html" title="Collectors.mac">Collectors.mac</a> /<a href="../../../../packages/streamapi/collectors/collectorsclass/collectorsclass.html" title="CollectorsClass">CollectorsClass</a>
+</div>
+</div>
+<div class="content">
+<h2>CollectorsClass</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">CollectorsClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Предоставляет часто используемые коллекторы, представлен singleton <a href="../../../../packages/streamapi/collectors/collectors.html" title="Link to Collectors">Collectors</a>.
+</p>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/collectors/collectorsclass/counting.html" title="">counting</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">counting</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">keyMapper</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">keyType</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает коллектор в карту <a href="../../../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a>, которая групирует по ключу возвращаемому <b>keyMapper</b>, типа <b>keyType</b>, и значением как количество элементов соответсвующих ключу
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/collectors/collectorsclass/toarray.html" title="">toArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toArray</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает коллектор в массив <a href="../../../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/collectors/collectorsclass/tolinkedlist.html" title="">toLinkedList</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toLinkedList</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает коллектор в список <a href="../../../../packages/collections/linkedlist/linkedlist/linkedlist.html" title="Link to LinkedList">LinkedList</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/collectors/collectorsclass/tolist.html" title="">toList</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toList</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает коллектор в список <a href="../../../../packages/collections/arraylist/arraylist/arraylist.html" title="Link to ArrayList">ArrayList</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/collectors/collectorsclass/tomap.html" title="">toMap</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toMap</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">keyMapper</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">valueMapper</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает коллектор в карту <a href="../../../../packages/collections/hashmap/hashmap/hashmap.html" title="Link to HashMap">HashMap</a> согласно преобразованию ключей через функцию <b>keyMapper</b> и значений <b>valueMapper</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/collectors/collectorsclass/totarray.html" title="">toTArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toTArray</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает коллектор в массив <a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

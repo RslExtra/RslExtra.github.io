@@ -1,0 +1,1513 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Библиотека StreamApi</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../packages/streamapi/index.html" title="StreamApi">StreamApi</a>
+</div>
+</div>
+<div class="content">
+<h2>Package StreamApi</h2>
+<div class="file-decl">
+<div class="macro-path"><p>..\mac\extra\StreamApi\Stream.mac</p></div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+Реализация Stream Api. В большинстве своём схож с <b>Java Stream Api</b>. Реализует самые полезные методы для создания цепочек ленивых вычислений.
+</p><p>
+Создать Stream можно следующими способами
+</p>
+<ul>
+<li> методом <b>.toStream()</b>, если он реализован у класса объекта например (<a href="../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a>, <a href="../../packages/collections/iterable/iterable/iterable.html" title="Link to Iterable">Collections</a>).</li>
+<li> вызовом функции StreamOf(obj). Obj может быть массивом <a href="../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>, <a href="../../packages/collections/iterable/iterable/iterable.html" title="Link to Iterable">Iterable</a>, объектом <a href="../../packages/textandbinary/textandbinary/tstreamdoc/tstreamdoc.html" title="Link to TStreamDoc">TStreamDoc</a>, строкой <b>String</b>, объектом таблицы бд <a href="../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TbFile</a>.</li>
+<li> реализовав итератор для любого класса с методами (next() : Variant, hasNext() : Bool) и передав его инстанс в конструктор класса <a href="../../packages/streamapi/streamapi/bornstream/bornstream.html" title="Link to BornStream">BornStream</a>.</li>
+</ul>
+<p>
+</p><p>
+После создания Stream, как обычно, через точку пишем <a href="../../packages/streamapi/streamapi/continuedstream/continuedstream.html" title="Link to ContinuedStream">методы</a> :
+</p>
+<ul>
+<li> конвеерные методы (тэг <b>Conveyor</b>)</li>
+<li> агрегирующие методы (тэг <b>Agregate</b>)</li>
+<li> терминальный метод (тэг <b>Terminal</b>), который запускает выполнение Stream и возвращает результат.</li>
+</ul>
+<p>
+</p><p>
+Во всех методах где необходимо передать ссылку на функцию, можно использовать <a href="../../packages/lambda/index.html" title="Link to Lambda">лямбды</a>, имя функции с <b>@</b> перед именем, ссылкой на метод <a href="../../packages/classesandobjects/classesandobjects/r2m.html" title="Link to R2M">R2M</a> или ссылку на функцию через <b>@</b>.
+</p><p>
+О чем следует помнить:
+</p>
+<ul>
+<li> Стрим не запускает конвеер вычислений до добавление в цепочку терминального метода.</li>
+<li> После того как стрим завершил работу, повторно запустить его не получится. Нужно создать заново.</li>
+<li> При передаче параметра как ссылки метода объекта класса (через <a href="../../packages/classesandobjects/classesandobjects/r2m.html" title="Link to R2M">R2M</a>), следует помнить, что объект должен существовать в момент вызова метода. Т.е объект необходимо поместить в память, например в переменную или массив, чтобы его не уничтожил GC.</li>
+</ul>
+<p>
+</p><p>
+Использование библиотеки помогает существенно сократить время написания аналитических отчетов (время исполнения чаще всего тоже), однако при использовании "на постоянку" желательно не использовать лямбды, чтобы не использовать HDD (все лямбды можно описать как маленькие функции).
+</p><p>
+В виду того, что RSL - динамически типизирован, рекомендуется потренироваться в использовании на языке со статической типизацией (Java, Scala, Kotlin, C#).
+</p>
+</div>
+<!--================== Macrofile Section ====================-->
+<h3>Макрофайлы</h3>
+<div class="declaration">
+<h4><a href="../../packages/streamapi/collectors/index.html" title="Link to Collectors">Collectors</a></h4>
+<p class="macro-path">..\mac\extra\StreamApi\Collectors.mac</p>
+<p>
+<p>
+</p><p>
+</p><p>
+Объекты коллекторы
+</p>
+</p>
+</div>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/arraylist/index.html" title="Link to Undefined">arraylist.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация списка на основе массива <a href="../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/arraymap/index.html" title="Link to Undefined">arraymap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Файл включает в себя реализацию интерфейса <b>map</b> через два массива
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/collections/index.html" title="Link to Undefined">collections.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека коллекций для языка RSL
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/hashmap/index.html" title="Link to Undefined">hashmap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через хэш-таблицу
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/hashset/index.html" title="Link to Undefined">hashset.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>set</b>, коллекцию уникальных значений
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/iterable/index.html" title="Link to Undefined">iterable.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/linkedhashmap/index.html" title="Link to Undefined">linkedhashmap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классов <a href="../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/linkedhashset/index.html" title="Link to Undefined">linkedhashset.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию <a href="../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html" title="Link to LinkedHashSet">LinkedHashSet</a> - коллекции уникальных элементов с сохранением порядка добавления
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/linkedlist/index.html" title="Link to Undefined">linkedlist.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию связного списка <a href="../../packages/collections/linkedlist/linkedlist/linkedlist.html" title="Link to LinkedList">LinkedList</a> и отсортированного связного списка <a href="../../packages/collections/linkedlist/sortedlinkedlist/sortedlinkedlist.html" title="Link to SortedLinkedList">SortedLinkedList</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/treemap/index.html" title="Link to Undefined">treemap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через красно-черное дерево
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/treeset/index.html" title="Link to Undefined">treeset.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализация отсортированной коллекции уникальных значений
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/lambda/lambda/index.html" title="Link to Undefined">lambda.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для динамического создания функций из строковых шаблонов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/comparators/index.html" title="Link to Undefined">comparators.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализованные функции-компараторы (compare и equals)
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/exceptions/index.html" title="Link to Undefined">exceptions.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация исключений и блоков try/catch/finally
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/oop/index.html" title="Link to Undefined">oop.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Вспомогательные классы и функции для реализации ООП паттернов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/sortingfunc/index.html" title="Link to Undefined">sortingfunc.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Релизация функций для сортировки массива
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/streamapi/collectors/index.html" title="Link to Undefined">collectors.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Объекты коллекторы
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/utils/arrayutils/index.html" title="Link to Undefined">arrayutils.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Утилиты для работы с массивами <a href="../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/utils/sarray/index.html" title="Link to Undefined">sarray.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Расширение стандартного класса <a href="../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Реализует всю базовую функциональность, за исключением переопределенного метода <a href="../../packages/utils/sarray/sarray/sort.html" title="Link to sort">sort()</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/utils/stringutils/index.html" title="Link to Undefined">stringutils.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Полезные утилиты для работы со строковыми переменными
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">bankinter</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rsexts</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Функции</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../packages/streamapi/streamapi/streamloadedmarker.html" title="">StreamLoadedMarker</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">StreamLoadedMarker</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция-маркер для проверки загрузки библиотеки <a href="../../packages/streamapi/streamapi/index.html" title="Link to StreamApi">#Stream</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../packages/streamapi/streamapi/streamof.html" title="">StreamOf</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">StreamOf</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">obj</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создает и возвращает Stream из объекта или примитива <b>obj</b>. Если создать стрим не возможно, бросается исключение <a href="../../packages/oop/exceptions/illegalargumentexception/illegalargumentexception.html" title="Link to IllegalArgumentException">IllegalArgumentException</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../packages/streamapi/streamapi/zipstreams.html" title="">zipStreams</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">zipStreams</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">s1</span><span class="symbol"> : </span><a href="../../packages/streamapi/streamapi/continuedstream/continuedstream.html" title="Link to ContinuedStream"><span class="typeName">ContinuedStream</span></a><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">s2</span><span class="symbol"> : </span><a href="../../packages/streamapi/streamapi/continuedstream/continuedstream.html" title="Link to ContinuedStream"><span class="typeName">ContinuedStream</span></a><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">bifunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создает стрим из двух стримов <b>s1</b> и <b>s2</b> и объединяет их элементы согласно функции <b>bifunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/streamapi/streamapi/streaminterface/streaminterface.html" title="">StreamInterface</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">StreamInterface</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Базовый класс для всех стримов, описывает методы доступные для всех наследников
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/streamapi/streamapi/continuedstream/continuedstream.html" title="">ContinuedStream</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../packages/streamapi/streamapi/streaminterface/streaminterface.html" title="Link to StreamInterface">StreamInterface</a><span class="symbol">) </span><span class="identifier">ContinuedStream</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Базовый класс для агрегатных и конвеерных стримов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/streamapi/streamapi/bornstream/bornstream.html" title="">BornStream</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../packages/streamapi/streamapi/continuedstream/continuedstream.html" title="Link to ContinuedStream">ContinuedStream</a><span class="symbol">) </span><span class="identifier">BornStream</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">iterator</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Базовый класс для стримов рождающих потоки
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/streamapi/streamapi/conveyorstream/conveyorstream.html" title="">ConveyorStream</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../packages/streamapi/streamapi/continuedstream/continuedstream.html" title="Link to ContinuedStream">ContinuedStream</a><span class="symbol">) </span><span class="identifier">ConveyorStream</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Базовый класс для конвеерных стримов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/streamapi/streamapi/agregatestream/agregatestream.html" title="">AgregateStream</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../packages/streamapi/streamapi/continuedstream/continuedstream.html" title="Link to ContinuedStream">ContinuedStream</a><span class="symbol">) </span><span class="identifier">AgregateStream</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Базовый класс для агрегатных стримов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/streamapi/streamapi/terminalstream/terminalstream.html" title="">TerminalStream</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../packages/streamapi/streamapi/streaminterface/streaminterface.html" title="Link to StreamInterface">StreamInterface</a><span class="symbol">) </span><span class="identifier">TerminalStream</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Базовый класс для терминальных стримов (запускающих и завершающих)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="">TBFileStream</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../packages/streamapi/streamapi/bornstream/bornstream.html" title="Link to BornStream">BornStream</a><span class="symbol">) </span><span class="identifier">TBFileStream</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_tbFile</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс для создания стрима из объекта <a href="../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TBFile</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="namespace-section">
+<div class="namespace-header">
+<h3>Имена</h3>
+<div class="namespace-hider"><p></p></div>
+</div>
+<div class="namespace-list">
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/streamapi/agregatestream/agregatestream.html">AgregateStream</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Stream.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/any/any.html">Any</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/arraylist/arraylist/arraylist.html">ArrayList</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\ArrayList.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/arraymap/arraymap/arraymap.html">ArrayMap</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\ArrayMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/arrayutils/arrayutils.html">ArrayUtils</a>
+</div>
+<div class="namespace-type">
+<p>var</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\ArrayUtils.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/streamapi/bornstream/bornstream.html">BornStream</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Stream.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/sortingfunc/callobjectmethod.html">callObjectMethod</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\SortingFunc.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_comparenullable.html">CF_CompareNullable</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_compareprimitive.html">CF_ComparePrimitive</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_comparestrignorecase.html">CF_CompareStrIgnoreCase</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_comparetoimpl.html">CF_CompareToImpl</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_equalsbycompareto.html">CF_EqualsByCompareTo</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_equalsimpl.html">CF_EqualsImpl</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_equalsprimitive.html">CF_EqualsPrimitive</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_objectcomparator/cf_objectcomparator.html">CF_ObjectComparator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_objectcomparator2/cf_objectcomparator2.html">CF_ObjectComparator2</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_objectequals.html">CF_ObjectEquals</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_pairscomparator/cf_pairscomparator.html">CF_PairsComparator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_strequalsignorecase.html">CF_StrEqualsIgnoreCase</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/collectors/collectors.html">Collectors</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Collectors.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/streamapi/conveyorstream/conveyorstream.html">ConveyorStream</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Stream.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/collectors/customcollector/customcollector.html">CustomCollector</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Collectors.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/datehashcode.html">DateHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/descendingiterator/descendingiterator.html">DescendingIterator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/exception/exception.html">Exception </a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/sortingfunc/exqsort.html">ExQSort</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\SortingFunc.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/lambda/lambda/getlambdafunc.html">GetLambdaFunc</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\lambda\Lambda.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/getlastexception.html">getLastException</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashmap/hashmap/hashmap.html">HashMap</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashmap/hashmapentry/hashmapentry.html">HashMapEntry</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashset/hashset/hashset.html">HashSet</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashSet.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/illegalargumentexception/illegalargumentexception.html">IllegalArgumentException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/illegalstateexception/illegalstateexception.html">IllegalStateException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/indexoutofboundsexception/indexoutofboundsexception.html">IndexOutOfBoundsException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/inthashcode.html">IntHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashmap/inthashmap.html">IntHashMap</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashset/inthashset.html">IntHashSet</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashSet.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/ioexception/ioexception.html">IOException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/iterable/iterable.html">Iterable</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/iteratorinterface/iteratorinterface.html">IteratorInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/lambda/lambda/lambdaloadedmarker.html">LambdaLoadedMarker</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\lambda\Lambda.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/lambda/lambda/lambdas.html">Lambdas</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\lambda\Lambda.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html">LinkedHashMap</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\LinkedHashMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html">LinkedHashSet</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\LinkedHashSet.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/linkedlist/linkedlist/linkedlist.html">LinkedList</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\LinkedList.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/listinterface/listinterface.html">ListInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/linkedlist/llistof.html">llistOf</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\LinkedList.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/linkedlist/llrange.html">llRange</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\LinkedList.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/mapinterface/mapinterface.html">MapInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/modulenotimportedexception/modulenotimportedexception.html">ModuleNotImportedException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/nativeiterator/nativeiterator.html">NativeIterator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/nosuchelementexception/nosuchelementexception.html">NoSuchElementException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/numerichashcode.html">NumericHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/objecthashcode.html">ObjectHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashmap/objecthashmap.html">ObjectHashMap</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/pair/pair.html">Pair</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/present.html">PRESENT</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/sarray/sarray/sarray.html">SArray</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\SArray.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/setinterface/setinterface.html">SetInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/setlastexception.html">setLastException</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/setthrowmode.html">setThrowMode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/linkedlist/sortedlinkedlist/sortedlinkedlist.html">SortedLinkedList</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\LinkedList.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/streamapi/streamloadedmarker.html">StreamLoadedMarker</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Stream.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/streamapi/streamof.html">StreamOf</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Stream.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/stringutils/stringbuilder/stringbuilder.html">StringBuilder</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\StringUtils.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/stringhashcode.html">StringHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashmap/stringhashmap.html">StringHashMap</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashset/stringhashset.html">StringHashSet</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashSet.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/stringutils/stringjoiner/stringjoiner.html">StringJoiner</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\StringUtils.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/stringutils/stringutils.html">StringUtils</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\StringUtils.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/tarrayequals.html">TArrayEquals</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tarrayhashcode.html">TArrayHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/streamapi/terminalstream/terminalstream.html">TerminalStream</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Stream.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/throw.html">Throw</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/timehashcode.html">TimeHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/hashmap/tolowpwr2.html">toLowPwr2</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\HashMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/treemap/treemap/treemap.html">TreeMap</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\TreeMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/treemap/treemapkeyiterator/treemapkeyiterator.html">TreeMapKeyIterator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\TreeMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/treemap/treemapvalueiterator/treemapvalueiterator.html">TreeMapValueIterator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\TreeMap.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/treeset/treeset/treeset.html">TreeSet</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\TreeSet.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/try/try.html">Try</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple/tuple.html">Tuple</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple1/tuple1.html">Tuple1</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple2/tuple2.html">Tuple2</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple3/tuple3.html">Tuple3</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple4/tuple4.html">Tuple4</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple5/tuple5.html">Tuple5</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/unsupportedoperationexception/unsupportedoperationexception.html">UnsupportedOperationException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/variantcompare.html">VariantCompare</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/variantequals.html">VariantEquals</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/varianthashcode.html">VariantHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/streamapi/streamapi/zipstreams.html">zipStreams</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\StreamApi\Stream.mac</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../js/index.js"></script>
+</body>
+</html>

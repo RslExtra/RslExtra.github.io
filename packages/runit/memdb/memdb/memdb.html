@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс MemDB</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/runit/index.html" title="RUnit. Библиотека для юнит-тестирования.">RUnit. Библиотека для юнит-тестирования.</a> /<a href="../../../../packages/runit/memdb/index.html" title="MemDB.mac">MemDB.mac</a> /<a href="../../../../packages/runit/memdb/memdb/memdb.html" title="MemDB">MemDB</a>
+</div>
+</div>
+<div class="content">
+<h2>MemDB</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">MemDB</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_struct</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс таблицы в памяти. Единственным и обязательным параметром является структура <b>_struct</b> типа <a href="../../../../packages/runit/memdb/mocktrechandler/mocktrechandler.html" title="Link to MockTRecHandler">MockTRecHandler</a>. Которая определяет структуру полей бд, которую необходимо предварительно собрать с помощью <a href="../../../../packages/runit/memdb/structurebuilder/structurebuilder.html" title="Link to StructureBuilder">StructureBuilder</a>.
+</p><p>
+<b>Offtop:</b> - вообще предусматривалась возможность передать реальный <a href="../../../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TBFile</a> в <b>_struct</b>, чтобы скопировать все ключи и поля реальной таблицы, однако эта возможность не тестировалась. Можете попробовать и пофиксить последующие баги, тогда генерация таблицы будет еще проще, однако станет не удобным добавлять все поля бд, даже те, которые не нужны в конкретном тесте.
+</p>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/addkey.html" title="">addKey</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">addKey</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">num</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет ключ бд под номером <b>num</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/addrow.html" title="">addRow</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">addRow</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет строку в бд, значения полей перечисляются в аргументах метода
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/clear.html" title="">clear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">clear</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Очищает буфер
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/delete.html" title="">delete</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">delete</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выполняет операцию удаления строки из бд с физической позицией строки из буфера
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getdirect.html" title="">getDirect</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getDirect</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">pos</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Переводит курсор бд в позицию на которой был последний вызов <a href="../../../../packages/runit/memdb/memdb/getpos.html" title="Link to getPos">GetPos</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/geteq.html" title="">getEQ</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getEQ</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен <a href="../../../../packages/filesanddb/filesanddb/tbfile/geteq.html" title="Link to GetEQ">TBFile.GetEQ</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getfldinfo.html" title="">getFldInfo</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getFldInfo</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возращает массив структуры полей
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getge.html" title="">getGE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getGE</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен <a href="../../../../packages/filesanddb/filesanddb/tbfile/getge.html" title="Link to GetGE">TBFile.getGE</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getgt.html" title="">getGT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getGT</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен <a href="../../../../packages/filesanddb/filesanddb/tbfile/getgt.html" title="Link to GetGT">TBFile.getGT</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getkeyinfo.html" title="">getKeyInfo</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getKeyInfo</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возращает массив структуры ключей
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getle.html" title="">getLE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getLE</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен <a href="../../../../packages/filesanddb/filesanddb/tbfile/getle.html" title="Link to GetLE">TBFile.getLE</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getlt.html" title="">getLT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getLT</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен <a href="../../../../packages/filesanddb/filesanddb/tbfile/getlt.html" title="Link to GetLT">TBFile.getLT</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/getpos.html" title="">getPos</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getPos</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает физическую позицию текущей записи в буфере
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/insert.html" title="">insert</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">insert</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выполняет операцию добавления новой строки из буфера
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/next.html" title="">next</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">next</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Переводит курсор на следующую запись и возвращает <code class="intext">true</code> если она существует
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/nrecords.html" title="">NRecords</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">NRecords</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает количество записей бд
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/prev.html" title="">prev</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">prev</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Переводит курсор на предыдущую запись и возвращает <code class="intext">true</code> если она существует
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/rewind.html" title="">rewind</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">rewind</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Переводит курсор в начало таблицы
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/memdb/memdb/update.html" title="">update</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">update</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выполняет операцию обновления текущей строки из буфера
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

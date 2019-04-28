@@ -1,0 +1,1255 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Библиотека RUnit</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../packages/runit/index.html" title="RUnit. Библиотека для юнит-тестирования.">RUnit. Библиотека для юнит-тестирования.</a>
+</div>
+</div>
+<div class="content">
+<h2>RUnit. Библиотека для юнит-тестирования.</h2>
+<div class="file-decl">
+<div class="macro-path"><p>..\mac\extra\RUnit\RUnit.mac</p></div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+Библиотека для легкого тестирования пользовательских классов, макросов и модулей, написанных на RSL. Использует рефлексию, поэтому для создания тестов, необходимо следовать  простым шагам:
+</p>
+<ul>
+<li> Создаём отдельный макрофайл.</li>
+<li> Импортируем библиотеку <code class="intext">import "..\\mac\\extra\\RUnit\\RUnit.Mac";</code></li>
+<li> Если тестируется исполняемый модуль, то в тексте него после иннициализации глобных переменных и до начала исполнения необходимо добавить строку <code class="intext">if (ExecMacro("RUnitMarker")) return; end;</code>, что завершит выполнение модуля, при его импорте в тест, но не остановит исполнение при</li>
+</ul>
+<p>
+работе.
+</p>
+<ul>
+<li> Импортируем тестируемый модуль</li>
+<li> При необходимости настраиваем поведение <b>RUnit</b>, через свойства объект <a href="../../packages/runit/runit/runittest.html" title="Link to RUnitTest">RUnitTest</a>.</li>
+</ul>
+<p>
+</p><p>
+</p>
+<ul>
+<li> Создаем тестовый кейс как класс, расширяющий <a href="../../packages/runit/runit/testcase/testcase.html" title="Link to TestCase">TestCase</a>.</li>
+<li> Тестовые методы называем начиная со слова <code class="intext">test_</code></li>
+<li> Все остальные вспомогательные методы и поля класса называем иначе.</li>
+</ul>
+<p>
+</p><p>
+Для запуска тестов существует два варианта:
+</p>
+<ul>
+<li> По умолчанию настройка <a href="../../packages/runit/runit/runitproperties/auto_run_unit_test.html" title="Link to AUTO_RUN_UNIT_TEST">AUTO_RUN_UNIT_TEST</a> == <code class="intext">true</code>, что запускает тесты при вызове деструктора обхъекта кейса, поэтому необходимо в конце файла создать инстанс тестового кейса, не присваивая его переменной. Например <code class="intext">MyTestCase();</code>.</li>
+<li> Выставить значение <a href="../../packages/runit/runit/runitproperties/auto_run_unit_test.html" title="Link to AUTO_RUN_UNIT_TEST">AUTO_RUN_UNIT_TEST</a> == <code class="intext">false</code>. Запустить тест методом <a href="../../packages/runit/runit/testcase/runcase.html" title="Link to RunCase">TestCase.RunCase</a>.</li>
+</ul>
+<p>
+</p><p>
+Для вывода результатов теста, существует также два вариант в зависимости от настройки <a href="../../packages/runit/runit/runitproperties/auto_print_result.html" title="Link to AUTO_PRINT_RESULT">AUTO_PRINT_RESULT</a> :
+</p>
+<ul>
+<li> По умолчанию значение <code class="intext">true</code>. Дополнительных манипуляций производить не нужно. При вызове деструктора в конце работы программы результаты теста выведутся на экран.</li>
+<li> Если установить значение <code class="intext">false</code>. В нужный момент работы програмы вызвать функцию <a href="../../packages/runit/runit/ut_printresults.html" title="Link to UT_PrintResults">UT_PrintResults()</a>.</li>
+</ul>
+<p>
+</p><p>
+Для логирования всё аналогично выводу на экран. За вывод отвечает настройка <a href="../../packages/runit/runit/runitproperties/auto_log_result.html" title="Link to AUTO_LOG_RESULT">AUTO_LOG_RESULT</a> :
+</p>
+<ul>
+<li> По умолчанию значение <code class="intext">true</code>. В конце работы программы результаты тестов запишутся в лог.</li>
+<li> Если установить значение <code class="intext">false</code>. Необходимо вызвать функцию <a href="../../packages/runit/runit/ut_logresults.html" title="Link to UT_LogResults">UT_LogResults()</a>.</li>
+</ul>
+<p>
+</p><p>
+Пример тестируемого файла:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "..\\Mac\\Extra\\OOP\\Exceptions.mac";
+
+
+Macro calcSum(a, b)
+    return a+b;
+End;
+
+Macro calcMult(a, b)
+    return a*b;
+End;
+
+Macro calcDiv(a, b)
+    if (b == 0)
+        return Throw(IllegalArgumentException("Делить на ноль не стоит"));
+    end;
+    return a/b;
+End;
+
+if (ExecMacro("RUnitMarker")) return; end;
+// Во время тестов до этого места исполнение не дойдет
+var a = 20, b = 10;
+println(calcSum(a, b));
+println(calcMult(a, b));
+println(calcDiv(a, b));
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\Mac\\Extra\\OOP\\Exceptions.mac";
+
+
+Macro calcSum(a, b)
+    return a+b;
+End;
+
+Macro calcMult(a, b)
+    return a*b;
+End;
+
+Macro calcDiv(a, b)
+    if (b == 0)
+        return Throw(IllegalArgumentException("Делить на ноль не стоит"));
+    end;
+    return a/b;
+End;
+
+if (ExecMacro("RUnitMarker")) return; end;
+// Во время тестов до этого места исполнение не дойдет
+var a = 20, b = 10;
+println(calcSum(a, b));
+println(calcMult(a, b));
+println(calcDiv(a, b));
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+Пример файла с юнит-тестами:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "../mac/extra/RUnit/RUnit.mac";
+import "../mac/extra/_samples/RUnit/TestedFile.mac";
+
+Class (TestCase) TestCalc()
+
+   Macro test_sum()
+      assertEquals(20, calcSum(5, 15));
+      assertEquals(10, calcSum(-5, 15));
+   End;
+
+   Macro test_mult()
+      assertTrue(25==calcMult(5, 5));
+   End;
+
+   Macro test_div()
+      assertEquals(3, calcDiv(15, 5));
+      assertException(IllegalArgumentException, calcDiv(20, 0))
+   End;
+
+End;
+
+setThrowMode(2);
+TestCalc();
+setThrowMode(0);
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/RUnit/RUnit.mac";
+import "../mac/extra/_samples/RUnit/TestedFile.mac";
+
+Class (TestCase) TestCalc()
+
+   Macro test_sum()
+      assertEquals(20, calcSum(5, 15));
+      assertEquals(10, calcSum(-5, 15));
+   End;
+
+   Macro test_mult()
+      assertTrue(25==calcMult(5, 5));
+   End;
+
+   Macro test_div()
+      assertEquals(3, calcDiv(15, 5));
+      assertException(IllegalArgumentException, calcDiv(20, 0))
+   End;
+
+End;
+
+setThrowMode(2);
+TestCalc();
+setThrowMode(0);
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+</p>
+</div>
+<!--================== Macrofile Section ====================-->
+<h3>Макрофайлы</h3>
+<div class="declaration">
+<h4><a href="../../packages/runit/memdb/index.html" title="Link to MemDB">MemDB</a></h4>
+<p class="macro-path">..\mac\extra\RUnit\MemDB.mac</p>
+<p>
+<p>
+</p><p>
+</p><p>
+InMemory Database. Позволяет динамически создавать, заполнять структуру со схожим интерфейсом <a href="../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TbFile</a>
+</p>
+</p>
+</div>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/arraylist/index.html" title="Link to Undefined">arraylist.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация списка на основе массива <a href="../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/collections/iterable/index.html" title="Link to Undefined">iterable.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/lambda/lambda/index.html" title="Link to Undefined">lambda.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для динамического создания функций из строковых шаблонов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/comparators/index.html" title="Link to Undefined">comparators.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализованные функции-компараторы (compare и equals)
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/exceptions/index.html" title="Link to Undefined">exceptions.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация исключений и блоков try/catch/finally
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/oop/index.html" title="Link to Undefined">oop.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Вспомогательные классы и функции для реализации ООП паттернов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/oop/sortingfunc/index.html" title="Link to Undefined">sortingfunc.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Релизация функций для сортировки массива
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/runit/memdb/index.html" title="Link to Undefined">memdb.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+InMemory Database. Позволяет динамически создавать, заполнять структуру со схожим интерфейсом <a href="../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TbFile</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/utils/sarray/index.html" title="Link to Undefined">sarray.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Расширение стандартного класса <a href="../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Реализует всю базовую функциональность, за исключением переопределенного метода <a href="../../packages/utils/sarray/sarray/sort.html" title="Link to sort">sort()</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../packages/utils/stringutils/index.html" title="Link to Undefined">stringutils.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Полезные утилиты для работы со строковыми переменными
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">bankinter</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rsexts</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Depended Section ====================-->
+<div class="depend-section close">
+<div class="depend-header">
+<h3>Известные зависимые</h3>
+<div class="depend-hider"><p></p></div>
+</div>
+<div class="depend-list">
+<div class="depend-item">
+<div class="depend-name"><a href="../../packages/extra/extra/index.html" title="Link to ..\mac\extra\Extra.mac">Extra.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека вспомогательных классов и функций в ООП и функциональном стиле
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--================== Constant Section ====================-->
+<h3>Глобальные константы</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../packages/runit/runit/runittest.html" title="">RUnitTest</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">const </span><span class="identifier">RUnitTest</span><span class="symbol"> = </span><span class="symbol">GenObject("RUnitProperties")</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Объект класса <a href="../../packages/runit/runit/runitproperties/runitproperties.html" title="Link to RUnitProperties">RUnitProperties</a> для настройки поведения тестов
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Функции</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../packages/runit/runit/ut_logresults.html" title="">UT_LogResults</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">UT_LogResults</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выводит в лог результаты всех кейсов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../packages/runit/runit/ut_printresults.html" title="">UT_PrintResults</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">UT_PrintResults</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выводит на экран результаты всех кейсов
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/runit/runit/runitproperties/runitproperties.html" title="">RUnitProperties</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">RUnitProperties</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс настроек библиотеки представленный <a href="../../packages/runit/runit/runittest.html" title="Link to RUnitTest">RUnitTest</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../packages/runit/runit/testcase/testcase.html" title="">TestCase</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">TestCase</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_name</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Основной класс библиотеки, для написания юнит теста необходимо унаследоваться от него
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="namespace-section">
+<div class="namespace-header">
+<h3>Имена</h3>
+<div class="namespace-hider"><p></p></div>
+</div>
+<div class="namespace-list">
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/any/any.html">Any</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/arraylist/arraylist/arraylist.html">ArrayList</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\ArrayList.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/sortingfunc/callobjectmethod.html">callObjectMethod</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\SortingFunc.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_comparenullable.html">CF_CompareNullable</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_compareprimitive.html">CF_ComparePrimitive</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_comparestrignorecase.html">CF_CompareStrIgnoreCase</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_comparetoimpl.html">CF_CompareToImpl</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_equalsbycompareto.html">CF_EqualsByCompareTo</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_equalsimpl.html">CF_EqualsImpl</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_equalsprimitive.html">CF_EqualsPrimitive</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_objectcomparator/cf_objectcomparator.html">CF_ObjectComparator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_objectcomparator2/cf_objectcomparator2.html">CF_ObjectComparator2</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_objectequals.html">CF_ObjectEquals</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_pairscomparator/cf_pairscomparator.html">CF_PairsComparator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/cf_strequalsignorecase.html">CF_StrEqualsIgnoreCase</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/datehashcode.html">DateHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/descendingiterator/descendingiterator.html">DescendingIterator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/exception/exception.html">Exception </a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/sortingfunc/exqsort.html">ExQSort</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\SortingFunc.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/lambda/lambda/getlambdafunc.html">GetLambdaFunc</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\lambda\Lambda.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/getlastexception.html">getLastException</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/illegalargumentexception/illegalargumentexception.html">IllegalArgumentException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/illegalstateexception/illegalstateexception.html">IllegalStateException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/indexoutofboundsexception/indexoutofboundsexception.html">IndexOutOfBoundsException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/inthashcode.html">IntHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/ioexception/ioexception.html">IOException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/iterable/iterable.html">Iterable</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/iteratorinterface/iteratorinterface.html">IteratorInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/lambda/lambda/lambdaloadedmarker.html">LambdaLoadedMarker</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\lambda\Lambda.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/lambda/lambda/lambdas.html">Lambdas</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\lambda\Lambda.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/listinterface/listinterface.html">ListInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/mapinterface/mapinterface.html">MapInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/runit/memdb/memdb/memdb.html">MemDB</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\RUnit\MemDB.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/modulenotimportedexception/modulenotimportedexception.html">ModuleNotImportedException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/nativeiterator/nativeiterator.html">NativeIterator</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/nosuchelementexception/nosuchelementexception.html">NoSuchElementException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/numerichashcode.html">NumericHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/objecthashcode.html">ObjectHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/pair/pair.html">Pair</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/present.html">PRESENT</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/runit/runit/runittest.html">RUnitTest</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\RUnit\RUnit.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/sarray/sarray/sarray.html">SArray</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\SArray.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/collections/iterable/setinterface/setinterface.html">SetInterface</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\collections\Iterable.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/setlastexception.html">setLastException</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/setthrowmode.html">setThrowMode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/stringutils/stringbuilder/stringbuilder.html">StringBuilder</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\StringUtils.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/stringhashcode.html">StringHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/stringutils/stringjoiner/stringjoiner.html">StringJoiner</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\StringUtils.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/utils/stringutils/stringutils.html">StringUtils</a>
+</div>
+<div class="namespace-type">
+<p>const</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\utils\StringUtils.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/runit/memdb/structurebuilder/structurebuilder.html">StructureBuilder</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\RUnit\MemDB.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/tarrayequals.html">TArrayEquals</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tarrayhashcode.html">TArrayHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/runit/runit/testcase/testcase.html">TestCase</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\RUnit\RUnit.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/throw.html">Throw</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/timehashcode.html">TimeHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/try/try.html">Try</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple/tuple.html">Tuple</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple1/tuple1.html">Tuple1</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple2/tuple2.html">Tuple2</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple3/tuple3.html">Tuple3</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple4/tuple4.html">Tuple4</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/tuple5/tuple5.html">Tuple5</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/exceptions/unsupportedoperationexception/unsupportedoperationexception.html">UnsupportedOperationException</a>
+</div>
+<div class="namespace-type">
+<p>class</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Exceptions.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/runit/runit/ut_logresults.html">UT_LogResults</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\RUnit\RUnit.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/runit/runit/ut_printresults.html">UT_PrintResults</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\RUnit\RUnit.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/variantcompare.html">VariantCompare</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/comparators/variantequals.html">VariantEquals</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\Comparators.mac</p>
+</div>
+</div>
+<div class="namespace-item">
+<div class="namespace-name">
+<a href="../../packages/oop/oop/varianthashcode.html">VariantHashCode</a>
+</div>
+<div class="namespace-type">
+<p>macro</p>
+</div>
+<div class="namespace-path">
+<p>..\mac\extra\OOP\OOP.mac</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../js/index.js"></script>
+</body>
+</html>

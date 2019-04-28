@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Метод ListInterface.sort</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/collections/index.html" title="Collections">Collections</a> /<a href="../../../../packages/collections/iterable/index.html" title="Iterable.mac">Iterable.mac</a> /<a href="../../../../packages/collections/iterable/listinterface/listinterface.html" title="ListInterface">ListInterface</a> /<a href="../../../../packages/collections/iterable/listinterface/sort.html" title="sort">sort</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>ListInterface.sort ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sort</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">compareFun</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/collections/iterable/listinterface/listinterface.html" title="link to ListInterface"><span class="identifier">ListInterface</span></a></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Сортирует исходный список согласно функции-компаратору <b>compareFun</b> и возвращает ссылку на него. Можно не указывать <b>compareFun</b> если она определена для текущего списка.
+</p><p>
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>list.addItems(8, 1, 3, 4, 2, 6, 5, 9, 7);
+list.sort();
+list.toScreen();                    // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\mac\\extra\\collections\\collections.mac";
+var list = ArrayList();
+list.addItems(8, 1, 3, 4, 2, 6, 5, 9, 7);
+list.sort();
+list.toScreen();                    // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

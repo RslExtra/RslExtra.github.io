@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс PredicateFunctions</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/oop/index.html" title="OOP">OOP</a> /<a href="../../../../packages/oop/functions/index.html" title="Functions.mac">Functions.mac</a> /<a href="../../../../packages/oop/functions/predicatefunctions/predicatefunctions.html" title="PredicateFunctions">PredicateFunctions</a>
+</div>
+</div>
+<div class="content">
+<h2>PredicateFunctions</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><span class="identifier">FunctionalFactory</span><span class="symbol">) </span><span class="identifier">PredicateFunctions</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+Предопределенные функции-предикаты.
+</p>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/byprop.html" title="">byprop</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">byprop</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">prName</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Позволяет установить функцию для поля объекта, а не самого объекта
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/classequals.html" title="">ClassEquals</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">ClassEquals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">clName</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент того же класса или класса-наследника с именем <b>clName</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/eq.html" title="">EQ</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">EQ</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент равен <b>val</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/ge.html" title="">GE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">GE</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент больше или равен <b>val</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/gt.html" title="">GT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">GT</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент больше <b>val</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/isnull.html" title="">IsNull</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">IsNull</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент равен <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/le.html" title="">LE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">LE</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент меньше или равен <b>val</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/lt.html" title="">LT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">LT</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент меньше <b>val</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/nonnull.html" title="">NonNull</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">NonNull</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент не равен <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/noteq.html" title="">NotEQ</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">NotEQ</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если аргумент не равен <b>val</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/functions/predicatefunctions/typenameis.html" title="">TypeNameIs</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">TypeNameIs</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">typeName</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает функцию предикат, которая возвращает <code class="intext">true</code> если имя типа аргумента равно <b>typeName</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

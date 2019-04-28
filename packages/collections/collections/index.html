@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Collections.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/collections/index.html" title="Collections">Collections</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>Collections.mac</h1>
+<div class="version-v"><p>v 1.0</p></div>
+</div>
+<div class="macro-path"><p>..\mac\extra\collections\Collections.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+Библиотека коллекций для языка RSL.
+</p><p>
+Создана с целью взаимодействия с объектами описанными на языке RSL в объектно-ориентированном и функциональном стилях программирования.
+В большинстве своём схожа с <b>Java.collections</b>.
+Для начала использования, достаточно импортировать библиотеку в макрофайл директивой <code class="intext">import "..\\Mac\\Extra\\Collections\\Collections.mac";</code>
+Также возможен импорт отдельных макрофайлов.
+Изначально все коллекции поддерживают работу с элементами разных типов RSL. Однако для обеспечения лучшей производительности рекомендуется использовать в одной коллекции элементы одного типа и определить этот тип методами <a href="../../../packages/collections/iterable/listinterface/settype.html" title="Link to setType">ListInterface.setType</a> для списков, <a href="../../../packages/collections/iterable/setinterface/settype.html" title="Link to setType">SetInterface.setType</a> для сэтов, и <a href="../../../packages/collections/iterable/mapinterface/setkeytype.html" title="Link to setKeyType">MapInterface.setKeyType</a> и <a href="../../../packages/collections/iterable/mapinterface/setvaluetype.html" title="Link to setValueType">MapInterface.setValueType</a> для карт.
+</p><p>
+Иерархия классов.
+Базовый класс <a href="../../../packages/collections/iterable/iterable/iterable.html" title="Link to Iterable">Iterable</a>.
+От него наследуются абстрактные классы-интерфейсы определяющее общие методы.
+</p><p>
+Списки (<a href="../../../packages/collections/iterable/listinterface/listinterface.html" title="Link to ListInterface">ListInterface</a>):
+</p>
+<ul>
+<li> <a href="../../../packages/collections/arraylist/arraylist/arraylist.html" title="Link to ArrayList">ArrayList</a>  - список, реализованный на основе массива <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>.</li>
+<li> <a href="../../../packages/collections/linkedlist/linkedlist/linkedlist.html" title="Link to LinkedList">LinkedList</a> - двусвязный список. Присутствуют методы стека и очереди.</li>
+<li> <a href="../../../packages/collections/linkedlist/sortedlinkedlist/sortedlinkedlist.html" title="Link to SortedLinkedList">SortedLinkedList</a> - сортированный двусвязный список. Все элементы коллекции упорядочены в каждый момент времени согласно заданной функции-компаратору.</li>
+</ul>
+<p>
+</p><p>
+Множества (<a href="../../../packages/collections/iterable/setinterface/setinterface.html" title="Link to SetInterface">SetInterface</a>), коллекции уникальных элементов.
+</p>
+<ul>
+<li> <a href="../../../packages/collections/hashset/hashset/hashset.html" title="Link to HashSet">HashSet</a> - Сэт на основе <a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="Link to HashMap">HashMap</a>. Самый быстрый по производительности вариант. Не гарантирует сохранение порядка.</li>
+<li> <a href="../../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html" title="Link to LinkedHashSet">LinkedHashSet</a> - тоже самое что и <a href="../../../packages/collections/hashset/hashset/hashset.html" title="Link to HashSet">HashSet</a>, однако элементы будут стоять в порядке добавления.</li>
+<li> <a href="../../../packages/collections/treeset/treeset/treeset.html" title="Link to TreeSet">TreeSet</a> - Сэт на основе <a href="../../../packages/collections/treemap/treemap/treemap.html" title="Link to TreeMap">TreeMap</a>. Элементы располагаются в порядке возрастания согласно заданной функции-компаратору.</li>
+</ul>
+<p>
+</p><p>
+Карты (<a href="../../../packages/collections/iterable/mapinterface/mapinterface.html" title="Link to MapInterface">MapInterface</a>), коллекции для работы с парами ключ-значение.
+</p>
+<ul>
+<li> <a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="Link to HashMap">HashMap</a>    - она же хэштаблица. Не гарантирует порядок элементов.</li>
+<li> <a href="../../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a> - упорядоченная реализация <a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="Link to HashMap">HashMap</a>. Сохраняет порядок добавления.</li>
+<li> <a href="../../../packages/collections/treemap/treemap/treemap.html" title="Link to TreeMap">TreeMap</a> - реализация основанная на красно-черных деревьях. Элементы располагаются в порядке возрастания ключей.</li>
+<li> <a href="../../../packages/collections/arraymap/arraymap/arraymap.html" title="Link to ArrayMap">ArrayMap</a> - реализация на основе двух массивов для примитивных ключей. Занимает меньше остальных карт места в памяти. Элементы упорядочены по возрастанию ключей.</li>
+</ul>
+<p>
+</p><p>
+</p>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/arraylist/index.html" title="Link to Undefined">arraylist.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация списка на основе массива <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/arraymap/index.html" title="Link to Undefined">arraymap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Файл включает в себя реализацию интерфейса <b>map</b> через два массива
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/hashmap/index.html" title="Link to Undefined">hashmap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через хэш-таблицу
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/hashset/index.html" title="Link to Undefined">hashset.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>set</b>, коллекцию уникальных значений
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/iterable/index.html" title="Link to Undefined">iterable.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/linkedhashmap/index.html" title="Link to Undefined">linkedhashmap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классов <a href="../../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/linkedhashset/index.html" title="Link to Undefined">linkedhashset.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию <a href="../../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html" title="Link to LinkedHashSet">LinkedHashSet</a> - коллекции уникальных элементов с сохранением порядка добавления
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/linkedlist/index.html" title="Link to Undefined">linkedlist.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию связного списка <a href="../../../packages/collections/linkedlist/linkedlist/linkedlist.html" title="Link to LinkedList">LinkedList</a> и отсортированного связного списка <a href="../../../packages/collections/linkedlist/sortedlinkedlist/sortedlinkedlist.html" title="Link to SortedLinkedList">SortedLinkedList</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/treemap/index.html" title="Link to Undefined">treemap.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через красно-черное дерево
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/treeset/index.html" title="Link to Undefined">treeset.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализация отсортированной коллекции уникальных значений
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/lambda/lambda/index.html" title="Link to Undefined">lambda.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для динамического создания функций из строковых шаблонов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/comparators/index.html" title="Link to Undefined">comparators.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализованные функции-компараторы (compare и equals)
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/exceptions/index.html" title="Link to Undefined">exceptions.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация исключений и блоков try/catch/finally
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/oop/index.html" title="Link to Undefined">oop.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Вспомогательные классы и функции для реализации ООП паттернов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/sortingfunc/index.html" title="Link to Undefined">sortingfunc.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Релизация функций для сортировки массива
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/sarray/index.html" title="Link to Undefined">sarray.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Расширение стандартного класса <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Реализует всю базовую функциональность, за исключением переопределенного метода <a href="../../../packages/utils/sarray/sarray/sort.html" title="Link to sort">sort()</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/stringutils/index.html" title="Link to Undefined">stringutils.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Полезные утилиты для работы со строковыми переменными
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">bankinter</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rsexts</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Depended Section ====================-->
+<div class="depend-section close">
+<div class="depend-header">
+<h3>Известные зависимые</h3>
+<div class="depend-hider"><p></p></div>
+</div>
+<div class="depend-list">
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/collectors/index.html" title="Link to ..\mac\extra\StreamApi\Collectors.mac">Collectors.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Объекты коллекторы
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/extra/extra/index.html" title="Link to ..\mac\extra\Extra.mac">Extra.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека вспомогательных классов и функций в ООП и функциональном стиле
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/streamapi/index.html" title="Link to ..\mac\extra\StreamApi\Stream.mac">Stream.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация Stream Api
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

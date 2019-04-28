@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TimeUtils.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../packages/utils/timeutils/index.html" title="TimeUtils.mac">TimeUtils.mac</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>TimeUtils.mac</h1>
+</div>
+<div class="macro-path"><p>..\mac\extra\utils\TimeUtils.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+Утилиты для работы с датой и временем.
+</p>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/lambda/lambda/index.html" title="Link to Undefined">lambda.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для динамического создания функций из строковых шаблонов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/comparators/index.html" title="Link to Undefined">comparators.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализованные функции-компараторы (compare и equals)
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/exceptions/index.html" title="Link to Undefined">exceptions.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация исключений и блоков try/catch/finally
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/sarray/index.html" title="Link to Undefined">sarray.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Расширение стандартного класса <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Реализует всю базовую функциональность, за исключением переопределенного метода <a href="../../../packages/utils/sarray/sarray/sort.html" title="Link to sort">sort()</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/stringutils/index.html" title="Link to Undefined">stringutils.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Полезные утилиты для работы со строковыми переменными
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">bankinter</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rsexts</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Constant Section ====================-->
+<h3>Глобальные константы</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../packages/utils/timeutils/locales.html" title="">Locales</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">const </span><span class="identifier">Locales</span><span class="symbol"> = </span><span class="symbol">GenObject("LocalesClass")</span></code>
+</div>
+<div class="description">
+<p>
+Singleton объект класса <a href="../../../packages/utils/timeutils/localesclass/localesclass.html" title="Link to LocalesClass">LocalesClass</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../packages/utils/timeutils/timeutils.html" title="">TimeUtils</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">const </span><span class="identifier">TimeUtils</span><span class="symbol"> = </span><span class="symbol">GenObject("TimeUtilsClass")</span></code>
+</div>
+<div class="description">
+<p>
+Singleton объект класса <a href="../../../packages/utils/timeutils/timeutilsclass/timeutilsclass.html" title="Link to TimeUtilsClass">TimeUtilsClass</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/utils/timeutils/localesclass/localesclass.html" title="">LocalesClass</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">LocalesClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс предопределённых локалей; на данный момент поддерживаются 2: RU и US
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/utils/timeutils/timeutilsclass/timeutilsclass.html" title="">TimeUtilsClass</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">TimeUtilsClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс утилит, представлен синглтоном <a href="../../../packages/utils/timeutils/timeutils.html" title="Link to TimeUtils">TimeUtils</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/utils/timeutils/tu_datetime/tu_datetime.html" title="">TU_DateTime</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">TU_DateTime</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_dt</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_tm</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_tz</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс обертка для даты/времени
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/utils/timeutils/tu_dateformat/tu_dateformat.html" title="">TU_DateFormat</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">TU_DateFormat</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_pattern</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_locale</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс временного формата
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

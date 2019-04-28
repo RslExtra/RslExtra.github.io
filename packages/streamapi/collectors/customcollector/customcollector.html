@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс CustomCollector</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/streamapi/index.html" title="StreamApi">StreamApi</a> /<a href="../../../../packages/streamapi/collectors/index.html" title="Collectors.mac">Collectors.mac</a> /<a href="../../../../packages/streamapi/collectors/customcollector/customcollector.html" title="CustomCollector">CustomCollector</a>
+</div>
+</div>
+<div class="content">
+<h2>CustomCollector</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">CustomCollector</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">supplier</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">accumulator</span><span class="symbol"> : </span><span class="typeName">SomeShit</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol">[</span><span class="paramName">finisher</span><span class="symbol"> : </span><span class="typeName">Link</span><span class="symbol"> = </span><span class="defaultValue">null</span><span class="symbol">]</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Пользовательский класс коллектора. Принимает на вход три аргумента ссылки на функции или валидные лямбда-выражения.
+</p><p>
+</p>
+<p>
+</p><p>
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "..\\mac\\extra\\StreamApi\\Stream.mac";
+
+var filepath = "..\\workfile\\CustomCollector.txt";
+var arr = SArray(1, 2, 3, 4, 5);
+var resFile = arr.toStream()                // Создаем стрим
+                 .collect(CustomCollector(
+                     "TStreamDoc(filepath, 'W', 'utf8')",    // Лямбда которая создаст файл
+                     "acc, el -> acc.writeLine(String(el))", // На каждой итерации будет записана строка
+                     "supplyObj -> supplyObj")               // Вернем результатом объект TStreamDoc
+                         );
+resFile.writeLine("The end");  // Дозапишем в конец еще одну строку
+resFile = null;
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\mac\\extra\\StreamApi\\Stream.mac";
+
+var filepath = "..\\workfile\\CustomCollector.txt";
+var arr = SArray(1, 2, 3, 4, 5);
+var resFile = arr.toStream()                // Создаем стрим
+                 .collect(CustomCollector(
+                     "TStreamDoc(filepath, 'W', 'utf8')",    // Лямбда которая создаст файл
+                     "acc, el -> acc.writeLine(String(el))", // На каждой итерации будет записана строка
+                     "supplyObj -> supplyObj")               // Вернем результатом объект TStreamDoc
+                         );
+resFile.writeLine("The end");  // Дозапишем в конец еще одну строку
+resFile = null;
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<!--================== Params Section ====================-->
+<h4>Аргументы конструктора класса</h4>
+<div class="parm-list">
+<div class="parm-item">
+<div class="parm-name"><p>supplier</p></div>
+<div class="parm-value"><p>- функция создающая экземпляр класса, в который необходимо будет собрать элементы вида Supply() : Variant.</p></div>
+</div>
+<div class="parm-item">
+<div class="parm-name"><p>accumulator</p></div>
+<div class="parm-value"><p>- функция-аккумулятор, добавляет элементы. Функция должна быть вида accumulate(SupplyObj, el).</p></div>
+</div>
+<div class="parm-item">
+<div class="parm-name"><p>finisher</p></div>
+<div class="parm-value"><p>- функция-финишер, принимает сборщик и возвращает итоговый результат. Должна быть вида finish(SupplyObj) : Variant.</p></div>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

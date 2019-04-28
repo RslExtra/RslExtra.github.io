@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exceptions.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/oop/index.html" title="OOP">OOP</a> /<a href="../../../packages/oop/exceptions/index.html" title="Exceptions.mac">Exceptions.mac</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>Exceptions.mac</h1>
+</div>
+<div class="macro-path"><p>..\mac\extra\OOP\Exceptions.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+Реализация исключений и блоков try/catch/finally.
+</p>
+<!--================== Depended Section ====================-->
+<div class="depend-section close">
+<div class="depend-header">
+<h3>Известные зависимые</h3>
+<div class="depend-hider"><p></p></div>
+</div>
+<div class="depend-list">
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/arraylist/index.html" title="Link to ..\mac\extra\collections\ArrayList.mac">ArrayList.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация списка на основе массива <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/arraymap/index.html" title="Link to ..\mac\extra\collections\ArrayMap.mac">ArrayMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Файл включает в себя реализацию интерфейса <b>map</b> через два массива
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/collections/index.html" title="Link to ..\mac\extra\collections\Collections.mac">Collections.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека коллекций для языка RSL
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/collectors/index.html" title="Link to ..\mac\extra\StreamApi\Collectors.mac">Collectors.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Объекты коллекторы
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/extra/extra/index.html" title="Link to ..\mac\extra\Extra.mac">Extra.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека вспомогательных классов и функций в ООП и функциональном стиле
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/hashmap/index.html" title="Link to ..\mac\extra\collections\HashMap.mac">HashMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через хэш-таблицу
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/hashset/index.html" title="Link to ..\mac\extra\collections\HashSet.mac">HashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>set</b>, коллекцию уникальных значений
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/iterable/index.html" title="Link to ..\mac\extra\collections\Iterable.mac">Iterable.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/lambda/lambda/index.html" title="Link to ..\mac\extra\lambda\Lambda.mac">Lambda.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для динамического создания функций из строковых шаблонов
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashmap/index.html" title="Link to ..\mac\extra\collections\LinkedHashMap.mac">LinkedHashMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классов <a href="../../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashset/index.html" title="Link to ..\mac\extra\collections\LinkedHashSet.mac">LinkedHashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию <a href="../../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html" title="Link to LinkedHashSet">LinkedHashSet</a> - коллекции уникальных элементов с сохранением порядка добавления
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedlist/index.html" title="Link to ..\mac\extra\collections\LinkedList.mac">LinkedList.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию связного списка <a href="../../../packages/collections/linkedlist/linkedlist/linkedlist.html" title="Link to LinkedList">LinkedList</a> и отсортированного связного списка <a href="../../../packages/collections/linkedlist/sortedlinkedlist/sortedlinkedlist.html" title="Link to SortedLinkedList">SortedLinkedList</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/runit/memdb/index.html" title="Link to ..\mac\extra\RUnit\MemDB.mac">MemDB.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+InMemory Database. Позволяет динамически создавать, заполнять структуру со схожим интерфейсом <a href="../../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TbFile</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/runit/runit/index.html" title="Link to ..\mac\extra\RUnit\RUnit.mac">RUnit.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для легкого тестирования пользовательских классов, макросов и модулей, написанных на RSL
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/utils/sarray/index.html" title="Link to ..\mac\extra\utils\SArray.mac">SArray.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Расширение стандартного класса <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Реализует всю базовую функциональность, за исключением переопределенного метода <a href="../../../packages/utils/sarray/sarray/sort.html" title="Link to sort">sort()</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/streamapi/index.html" title="Link to ..\mac\extra\StreamApi\Stream.mac">Stream.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация Stream Api
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/utils/stringutils/index.html" title="Link to ..\mac\extra\utils\StringUtils.mac">StringUtils.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Полезные утилиты для работы со строковыми переменными
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/utils/timeutils/index.html" title="Link to ..\mac\extra\utils\TimeUtils.mac">TimeUtils.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Утилиты для работы с датой и временем
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/treemap/index.html" title="Link to ..\mac\extra\collections\TreeMap.mac">TreeMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через красно-черное дерево
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/treeset/index.html" title="Link to ..\mac\extra\collections\TreeSet.mac">TreeSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Реализация отсортированной коллекции уникальных значений
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/utils/utils/index.html" title="Link to ..\mac\extra\utils\Utils.mac">Utils.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Функции</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/exceptions/getlastexception.html" title="">getLastException</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getLastException</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Служебный метод для работы в режиме Unit тестирования
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/exceptions/setlastexception.html" title="">setLastException</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setLastException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">exc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Служебный метод для работы в режиме Unit тестирования
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/exceptions/setthrowmode.html" title="">setThrowMode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setThrowMode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">modeInt</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Задает поведение метода throw
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/exceptions/throw.html" title="">Throw</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">Throw</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_exception</span><span class="symbol"> : </span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception "><span class="typeName">Exception</span></a><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Бросает исключение <b>_exception</b>. Вызывает функцию <a href="../../../packages/otherproc/otherproc/runerror.html" title="Link to RunError">RunError</a> передавая в качестве параметров текст исключения и объект исключения
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/exception/exception.html" title="">Exception </a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">Exception </span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Базовый класс исключения
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/illegalargumentexception/illegalargumentexception.html" title="">IllegalArgumentException</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception">Exception</a><span class="symbol">) </span><span class="identifier">IllegalArgumentException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Исключение, возникающее при неверном формате входных параметрах процедуры
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/illegalstateexception/illegalstateexception.html" title="">IllegalStateException</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception">Exception</a><span class="symbol">) </span><span class="identifier">IllegalStateException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Исключение, возникающее при вызове метода в неверное время
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/ioexception/ioexception.html" title="">IOException</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception">Exception</a><span class="symbol">) </span><span class="identifier">IOException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Исключение ошибок чтения данных
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/indexoutofboundsexception/indexoutofboundsexception.html" title="">IndexOutOfBoundsException</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception">Exception</a><span class="symbol">) </span><span class="identifier">IndexOutOfBoundsException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Исключение, возникающее при обращение по неверному индексу
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/nosuchelementexception/nosuchelementexception.html" title="">NoSuchElementException</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception">Exception</a><span class="symbol">) </span><span class="identifier">NoSuchElementException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Исключение, возникающее при невозможности получить объект
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/modulenotimportedexception/modulenotimportedexception.html" title="">ModuleNotImportedException</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception">Exception</a><span class="symbol">) </span><span class="identifier">ModuleNotImportedException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Исключение, возникающее, если не импортирован необходимый макрофайл
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/unsupportedoperationexception/unsupportedoperationexception.html" title="">UnsupportedOperationException</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception">Exception</a><span class="symbol">) </span><span class="identifier">UnsupportedOperationException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">detailMessage</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Исключение, возникающее, если метод не допустим к вызову
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/exceptions/try/try.html" title="">Try</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">Try</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tryfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс реализация блока try/catch/finally
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

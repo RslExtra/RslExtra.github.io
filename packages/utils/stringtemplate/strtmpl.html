@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Функция StrTmpl</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../packages/utils/stringtemplate/index.html" title="StringTemplate.mac">StringTemplate.mac</a> /<a href="../../../packages/utils/stringtemplate/strtmpl.html" title="StrTmpl">StrTmpl</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>StrTmpl ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">StrTmpl</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tmpl</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="spacer"></div>
+<!--================== Params Section ====================-->
+<h4>Параметры функции</h4>
+<div class="parm-list">
+<div class="parm-item">
+<div class="parm-name"><p>tmpl</p></div>
+<div class="parm-value"><p>шаблон строки</p></div>
+</div>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Возвращает сгенерированную строку из шаблона <b>tmpl</b>.
+Для передачи выражения expr необходимо заключить его в <b>$[expr]</b>;
+expr может быть
+</p>
+<ul>
+<li> глобальной переменной,</li>
+<li> ссылкой на объект с реализованным методом toString,</li>
+<li> любым выражением на языке RSL, доступным в глобальном контексте, за исключением символов <code class="intext">[]</code>(т.е к эл-ам массива следует обращаться через () );</li>
+</ul>
+<p>
+</p><p>
+Также возможно применять спецификаторы форматирования внутри скобок <code class="intext">[]</code>.
+</p><p>
+Например:
+</p>
+<div class="sample">
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-full">
+<pre><code>var acc = "40817840000000001234";
+var client = "Иванов Иван Иванович";
+var sum = $100523.23;
+var rate = 65.59;
+var tmpl = StrTmpl("Остаток на счёте в р.э. $[acc] ($[client]) = $[sum*rate:a:0:2]");
+Println(tmpl);
+// Остаток на счёте в р.э. 40817840000000001234 (Иванов Иван Иванович) = 659'331'865.57
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+Для использования функции внутри макрофункции, есть возможность использовать принудительно-глобальные переменные (пгп)
+при этом, если необходимо передать в шаблон одиночную пгп, можно не ограничивать её $<a href="#" title="#"></a>,
+</p><p>
+</p>
+<div class="sample">
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-full">
+<pre><code>Macro pgp()
+   var {i} = 0;
+   for({i}, 1, 5)
+      PrintlnT("Строка {i} к Вашим услугам.");
+   end;
+End;
+pgp();
+// Выведет 5 нумерованных строк.
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+</p><p>
+</p>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

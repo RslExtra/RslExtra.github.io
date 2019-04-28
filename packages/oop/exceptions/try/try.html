@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс Try</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/oop/index.html" title="OOP">OOP</a> /<a href="../../../../packages/oop/exceptions/index.html" title="Exceptions.mac">Exceptions.mac</a> /<a href="../../../../packages/oop/exceptions/try/try.html" title="Try">Try</a>
+</div>
+</div>
+<div class="content">
+<h2>Try</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">Try</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tryfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс реализация блока try/catch/finally.
+В вызов <a href="../../../../packages/oop/exceptions/try/try.html" title="Link to Try">try</a> передается ссылка на функцию которую необходимо выполнить, далее передается до 10 аргументов функции через запятую.
+</p><p>
+Затем в методе <a href="../../../../packages/oop/exceptions/try/catch.html" title="Link to catch">catch</a> первым аргументом указывается класс исключение - наследник <a href="../../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception ">Exception</a>, или код ошибки, если будет перехватываться стандартная <b>TrslError</b>,
+вторым аргументов указывается ссылка на функцию, которую необходимо выполнить в случае перехвата ошибки. Блоков <a href="../../../../packages/oop/exceptions/try/catch.html" title="Link to catch">catch</a> может быть указано сколько угодно много, однако выполнится функция лишь из первого подходящего блока. Если ни один блок не перехватит исключение, будет сгенерирована ошибка <b>TrslError</b> и программа завершится.
+</p><p>
+Далее есть возможность указать блок <a href="../../../../packages/oop/exceptions/try/finally.html" title="Link to finally">finally</a>. Единственным аргументом этого метода является ссылка на функцию которую необходимо выполнить, независимо, было ли брошено исключение/ошибка или нет.
+</p><p>
+Также есть возможность обрабатывать стандартные ошибки <b>TrslError</b>.
+Тогда, если функция передаваемая в Try вызывает ошибку <b>TrslError</b>, в вызове catch первым параметром указывается код ошибки (0  или null если необходимо перехватить любую), вторым параметром так же остается ссылка на функцию.
+В debug режиме будет показана соответствующая ошибка, однако при выборе "Нет" на вопрос ("Будем отлаживать?") программа продолжит своё выполнение если ошибка была перехвачена.
+</p><p>
+Пример использования:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>    var resultSqr = null;
+
+   // Пример функции возведения Integer в квадрат
+   Macro mysqr(p)
+      if (ValType(p) != V_INTEGER)
+         return Throw(IllegalArgumentException("Не верный тип " + p));
+      end;
+      resultSqr = p * p;
+      if (resultSqr < 0)  // В случае переполнения инта
+         RunError("Переполнение Integer");
+      end;
+   End;
+
+   Macro doOnIllegal(ex)
+      println("I'm on IllegalArgumentException");
+   End;
+
+   Macro doOnError(er)
+      println("I'm on error");
+   End;
+
+   Macro finallyBlock()
+      println("i'm in finnaly block.");
+      println("Result is " + resultSqr);
+   End;
+
+   Macro trySqr(parm)
+      try(@mysqr, parm)                                     // Передаем фукнцию по ссылке и параметры
+         .catch(IllegalArgumentException, @doOnIllegal)     // Если иключение того же типа или типа потомка, выполняется блок doOnIllegal
+         .catch(0, @doOnError)                              // Обработает любую ошибку
+         .finally(@finallyBlock);                           // В конце выполняем блок
+   End;
+
+   trySqr(25);            // Исключений и ошибок не будет, выполнится лишь блок finally
+   trySqr("1");           // Не верный тип аргумента
+   trySqr(12000000);      // Будет ошибка переполнения
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\mac\\extra\\OOP\\Exceptions.mac";
+    var resultSqr = null;
+
+   // Пример функции возведения Integer в квадрат
+   Macro mysqr(p)
+      if (ValType(p) != V_INTEGER)
+         return Throw(IllegalArgumentException("Не верный тип " + p));
+      end;
+      resultSqr = p * p;
+      if (resultSqr < 0)  // В случае переполнения инта
+         RunError("Переполнение Integer");
+      end;
+   End;
+
+   Macro doOnIllegal(ex)
+      println("I'm on IllegalArgumentException");
+   End;
+
+   Macro doOnError(er)
+      println("I'm on error");
+   End;
+
+   Macro finallyBlock()
+      println("i'm in finnaly block.");
+      println("Result is " + resultSqr);
+   End;
+
+   Macro trySqr(parm)
+      try(@mysqr, parm)                                     // Передаем фукнцию по ссылке и параметры
+         .catch(IllegalArgumentException, @doOnIllegal)     // Если иключение того же типа или типа потомка, выполняется блок doOnIllegal
+         .catch(0, @doOnError)                              // Обработает любую ошибку
+         .finally(@finallyBlock);                           // В конце выполняем блок
+   End;
+
+   trySqr(25);            // Исключений и ошибок не будет, выполнится лишь блок finally
+   trySqr("1");           // Не верный тип аргумента
+   trySqr(12000000);      // Будет ошибка переполнения
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/exceptions/try/catch.html" title="">catch</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">catch</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_exception</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_doFunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод отлавливает ошибку <b>_exception</b> и выполняет функцию <b>_doFunc</b> или пропускает ошибку к следующему catch
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/exceptions/try/execute.html" title="">execute</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">execute</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Запускает в ручную цепочку исполнения
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/oop/exceptions/try/finally.html" title="">finally</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">finally</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_finallyFunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод выполняет функцию  <b>_finallyFunc</b> не зависимо было ли бброшено исключение или нет
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

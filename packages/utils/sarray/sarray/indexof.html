@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Метод SArray.indexOf</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/sarray/index.html" title="SArray.mac">SArray.mac</a> /<a href="../../../../packages/utils/sarray/sarray/sarray.html" title="SArray">SArray</a> /<a href="../../../../packages/utils/sarray/sarray/indexof.html" title="indexOf">indexOf</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>SArray.indexOf ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">indexOf</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">equalsfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Возвращает индекс элемента массива <b>arr</b> равного <b>element</b>, <b>-1</b> в случае если ничего не найдено.
+Если <b>element</b> является <b>null</b>, функция вернет индекс первого элемента массива равный <code class="intext">null</code>.
+Так же есть возможность указать ссылку на функцию компаратор или её имя в 2 аргументе <b>compfunc</b>.
+Функция-компаратор должна принимать два аргумента и возвращать <code class="intext">true</code> в случае их равенства.
+Если функцию-компаратор не указывать сравнение будет проходить через <code class="intext">==</code> т.е. в случае когда <b>element</b> объектного типа, сравнение будет проходить по ссылке.
+</p><p>
+Пример:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>var arr = SArray(1, 2, 3, 4, 5, 2, null);
+
+var ind = arr.indexOf(2);
+println(ind);             // 1
+ind = arr.indexOf(8);     // Поищем индекс неприсутсвующего элемента
+println(ind);             // -1
+ind = arr.indexOf(null);  // Также можно искать null
+println(ind);             // 6
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/utils/SArray.mac";
+var arr = SArray(1, 2, 3, 4, 5, 2, null);
+
+var ind = arr.indexOf(2);
+println(ind);             // 1
+ind = arr.indexOf(8);     // Поищем индекс неприсутсвующего элемента
+println(ind);             // -1
+ind = arr.indexOf(null);  // Также можно искать null
+println(ind);             // 6
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

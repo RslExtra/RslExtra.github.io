@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс LambdaClass</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/lambda/index.html" title="Лямбда-функции">Лямбда-функции</a> /<a href="../../../../packages/lambda/lambda/lambdaclass/lambdaclass.html" title="LambdaClass">LambdaClass</a>
+</div>
+</div>
+<div class="content">
+<h2>LambdaClass</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">LambdaClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Основной класс библиотеки, содержит в себе настройки и методы для создания функций из текстовых выражений; представлен singleton <a href="../../../../packages/lambda/lambda/lambdas.html" title="Link to Lambdas">Lambdas</a>.
+</p>
+<!--================== Variables Section ====================-->
+<h3>Переменные класса</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/lambda/lambda/lambdaclass/arrow.html" title="">ARROW</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">ARROW</span><span class="symbol"> : </span><span class="identifier">String</span>;</code>
+</div>
+<div class="description">
+<p>
+Строковое значение стрелки в лямбда выражении; по умолчанию равно <b>-></b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/lambda/lambda/lambdaclass/defarg.html" title="">DEFARG</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">DEFARG</span><span class="symbol"> : </span><span class="identifier">String</span>;</code>
+</div>
+<div class="description">
+<p>
+Имя аргумента функции для использования без "стрелки"; по умолчанию равно <b>it</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/lambda/lambda/lambdaclass/file_prefix.html" title="">FILE_PREFIX</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">FILE_PREFIX</span>;</code>
+</div>
+<div class="description">
+<p>
+Префикс имени файлов; по умолчанию <b>lam_</b> 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/lambda/lambda/lambdaclass/remove_files.html" title="">REMOVE_FILES</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">REMOVE_FILES</span><span class="symbol"> : </span><span class="identifier">Bool</span>;</code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Флаг автоматического удаления сгенерированных файлов
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/lambda/lambda/lambdaclass/create.html" title="">create</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">create</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">lambdaText</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает ссылку на сгенерированный метод согласно выражению <b>lambdaText</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/lambda/lambda/lambdaclass/getfunc.html" title="">getFunc</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getFunc</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">candidate</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает ссылку на функцию или бросает исключение
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/lambda/lambda/lambdaclass/reset.html" title="">reset</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reset</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Сбрасывает настройки по умолчанию
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TestCase</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/runit/index.html" title="RUnit. Библиотека для юнит-тестирования.">RUnit. Библиотека для юнит-тестирования.</a> /<a href="../../../../packages/runit/runit/testcase/testcase.html" title="TestCase">TestCase</a>
+</div>
+</div>
+<div class="content">
+<h2>TestCase</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">TestCase</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_name</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Основной класс библиотеки, для написания юнит теста необходимо унаследоваться от него. Для запуска
+</p>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/afterclass.html" title="">afterClass</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">afterClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод выполняется после проведения тестов кейса
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/aftertest.html" title="">afterTest</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">afterTest</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод будет выполнен после каждого теста
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/ar.html" title="">Ar</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">Ar</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Генерирует массив <a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a> из переданных параметров
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/assertarrays.html" title="">assertArrays</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">assertArrays</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">arr2</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка на равенство двух массивов <a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a> <b>arr1</b> и <b>arr2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/assertequals.html" title="">assertEquals</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">assertEquals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">val2</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка на равенство <b>val1 == val2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/assertexception.html" title="">assertException</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">assertException</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">val2</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка, является ли последнее брошенное исключение <a href="../../../../packages/oop/exceptions/exception/exception.html" title="Link to Exception ">Exception</a> <b>val2</b> того же типа, что и  <b>val1</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/assertfalse.html" title="">assertFalse</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">assertFalse</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val1</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка на равенство с <code class="intext">false</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/assertnotnull.html" title="">assertNotNull</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">assertNotNull</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val1</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка не является ли <b>val1</b> <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/assertnull.html" title="">assertNull</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">assertNull</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val1</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка является ли <b>val1</b> <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/asserttrue.html" title="">assertTrue</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">assertTrue</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val1</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка на равенство с <code class="intext">true</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/beforeclass.html" title="">beforeClass</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">beforeClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод выполняется до проведения тестов кейса
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/beforetest.html" title="">beforeTest</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">beforeTest</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод будет выполнен перед каждым тестом
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/fail.html" title="">fail</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">fail</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">msg</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Принудительно заваливает тест
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/runit/runit/testcase/runcase.html" title="">RunCase</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">RunCase</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Запускает тесты текущего кейса. Целесообразно использовать только при настройке <a href="../../../../packages/runit/runit/runitproperties/auto_run_unit_test.html" title="Link to AUTO_RUN_UNIT_TEST">AUTO_RUN_UNIT_TEST</a> = <code class="intext">false</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

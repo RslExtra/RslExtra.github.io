@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Функция SampleMapFunction</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/definitions/index.html" title="Определения">Определения</a> /<a href="../../../packages/definitions/definitions/samplemapfunction.html" title="SampleMapFunction">SampleMapFunction</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>SampleMapFunction ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">SampleMapFunction</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Функция перобразователь (mapFunction). Представляет из себя макрос с одним аргументом, возвращает результат произвольного типа.
+Используется в <a href="../../../packages/streamapi/index.html" title="Link to StreamApi">StreamApi</a>, <a href="../../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a>, <a href="../../../packages/collections/index.html" title="Link to Collections">Collections</a>
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "../mac/extra/ext_SArray.mac";
+
+Private Class Person(_name, _age, _capital)
+    var name : String = _name;
+    var age  : Integer = _age;
+    var capital : Money = _capital;
+
+    Macro toString() : String
+        return name + " (" + age + ") состояние : " + capital;
+    End;
+End;
+
+/*
+   Создаем объект типа Person, но имя переводим в верхний регистр, возраст увеличиваем на 10 и уменшаем капитал в два раза.
+   Не забываем вернуть с помощью 'return'.
+*/
+Macro SampleMapFunction(p : Person) : Person
+   var newPerson = Person(StrUpr(p.name), p.age+10, p.capital/2);
+   return newPerson;
+End;
+
+/*
+   Преобразование вернет капитал.
+*/
+Macro SampleMapFunction2(p : Person) : Money
+   return p.capital;
+End;
+
+var arr = SArray();
+
+arr[0] = Person("Mike", 48, $200);
+arr[1] = Person("Alice", 21, $150000);
+arr[2] = Person("Gendalf", 88, $0);
+arr[3] = Person("Bob", 21, $500);
+
+var newArr = arr.map(@SampleMapFunction);
+newArr.toScreen2();  // Выведем на экран
+var capitalArr = newArr.map(@SampleMapFunction2);
+capitalArr.toScreen2();
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/ext_SArray.mac";
+
+Private Class Person(_name, _age, _capital)
+    var name : String = _name;
+    var age  : Integer = _age;
+    var capital : Money = _capital;
+
+    Macro toString() : String
+        return name + " (" + age + ") состояние : " + capital;
+    End;
+End;
+
+/*
+   Создаем объект типа Person, но имя переводим в верхний регистр, возраст увеличиваем на 10 и уменшаем капитал в два раза.
+   Не забываем вернуть с помощью 'return'.
+*/
+Macro SampleMapFunction(p : Person) : Person
+   var newPerson = Person(StrUpr(p.name), p.age+10, p.capital/2);
+   return newPerson;
+End;
+
+/*
+   Преобразование вернет капитал.
+*/
+Macro SampleMapFunction2(p : Person) : Money
+   return p.capital;
+End;
+
+var arr = SArray();
+
+arr[0] = Person("Mike", 48, $200);
+arr[1] = Person("Alice", 21, $150000);
+arr[2] = Person("Gendalf", 88, $0);
+arr[3] = Person("Bob", 21, $500);
+
+var newArr = arr.map(@SampleMapFunction);
+newArr.toScreen2();  // Выведем на экран
+var capitalArr = newArr.map(@SampleMapFunction2);
+capitalArr.toScreen2();
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

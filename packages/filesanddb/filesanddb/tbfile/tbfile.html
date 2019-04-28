@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TbFile</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/rsllib/index.html" title="Стандартные библиотеки">Стандартные библиотеки</a> /<a href="../../../../packages/rsllang/index.html" title="Проблемно-ориентированный язык RSL">Проблемно-ориентированный язык RSL</a> /<a href="../../../../packages/filesanddb/index.html" title="Работа с файлами и таблицами баз данных">Работа с файлами и таблицами баз данных</a> /<a href="../../../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="TbFile">TbFile</a>
+</div>
+</div>
+<div class="content">
+<h2>TbFile</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">TbFile</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">TableName</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">AttrStr</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">KeyNum</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">FileName</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">DicName</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс для работы с таблицами баз данных.
+</p>
+<!--================== Variables Section ====================-->
+<h3>Переменные класса</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/cnvmode.html" title="">CnvMode</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">CnvMode</span>;</code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/dicname.html" title="">DicName</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">DicName</span>;</code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/keynum.html" title="">KeyNum</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">KeyNum</span>;</code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/openmode.html" title="">OpenMode</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">OpenMode</span>;</code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/rec.html" title="">rec</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">rec</span>;</code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/tblname.html" title="">TblName</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">TblName</span>;</code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/clear.html" title="">clear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">clear</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/geteq.html" title="">GetEQ</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">GetEQ</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/getge.html" title="">GetGE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">GetGE</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/getgt.html" title="">GetGT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">GetGT</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/getle.html" title="">GetLE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">GetLE</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/getlt.html" title="">GetLT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">GetLT</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/next.html" title="">next</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">next</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/prev.html" title="">prev</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">prev</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/filesanddb/filesanddb/tbfile/rewind.html" title="">rewind</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">rewind</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

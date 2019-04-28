@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OOP.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/oop/index.html" title="OOP">OOP</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>OOP.mac</h1>
+</div>
+<div class="macro-path"><p>..\mac\extra\OOP\OOP.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+Вспомогательные классы и функции для реализации ООП паттернов.
+</p>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/comparators/index.html" title="Link to Undefined">comparators.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализованные функции-компараторы (compare и equals)
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Depended Section ====================-->
+<div class="depend-section close">
+<div class="depend-header">
+<h3>Известные зависимые</h3>
+<div class="depend-hider"><p></p></div>
+</div>
+<div class="depend-list">
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/arraylist/index.html" title="Link to ..\mac\extra\collections\ArrayList.mac">ArrayList.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация списка на основе массива <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/arraymap/index.html" title="Link to ..\mac\extra\collections\ArrayMap.mac">ArrayMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Файл включает в себя реализацию интерфейса <b>map</b> через два массива
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/collections/index.html" title="Link to ..\mac\extra\collections\Collections.mac">Collections.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека коллекций для языка RSL
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/collectors/index.html" title="Link to ..\mac\extra\StreamApi\Collectors.mac">Collectors.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Объекты коллекторы
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/extra/extra/index.html" title="Link to ..\mac\extra\Extra.mac">Extra.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека вспомогательных классов и функций в ООП и функциональном стиле
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/hashmap/index.html" title="Link to ..\mac\extra\collections\HashMap.mac">HashMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через хэш-таблицу
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/hashset/index.html" title="Link to ..\mac\extra\collections\HashSet.mac">HashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>set</b>, коллекцию уникальных значений
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/iterable/index.html" title="Link to ..\mac\extra\collections\Iterable.mac">Iterable.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashmap/index.html" title="Link to ..\mac\extra\collections\LinkedHashMap.mac">LinkedHashMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классов <a href="../../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashset/index.html" title="Link to ..\mac\extra\collections\LinkedHashSet.mac">LinkedHashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию <a href="../../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html" title="Link to LinkedHashSet">LinkedHashSet</a> - коллекции уникальных элементов с сохранением порядка добавления
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedlist/index.html" title="Link to ..\mac\extra\collections\LinkedList.mac">LinkedList.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию связного списка <a href="../../../packages/collections/linkedlist/linkedlist/linkedlist.html" title="Link to LinkedList">LinkedList</a> и отсортированного связного списка <a href="../../../packages/collections/linkedlist/sortedlinkedlist/sortedlinkedlist.html" title="Link to SortedLinkedList">SortedLinkedList</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/runit/memdb/index.html" title="Link to ..\mac\extra\RUnit\MemDB.mac">MemDB.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+InMemory Database. Позволяет динамически создавать, заполнять структуру со схожим интерфейсом <a href="../../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TbFile</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/runit/runit/index.html" title="Link to ..\mac\extra\RUnit\RUnit.mac">RUnit.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для легкого тестирования пользовательских классов, макросов и модулей, написанных на RSL
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/streamapi/index.html" title="Link to ..\mac\extra\StreamApi\Stream.mac">Stream.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация Stream Api
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/treemap/index.html" title="Link to ..\mac\extra\collections\TreeMap.mac">TreeMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через красно-черное дерево
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/treeset/index.html" title="Link to ..\mac\extra\collections\TreeSet.mac">TreeSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Реализация отсортированной коллекции уникальных значений
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Функции</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/datehashcode.html" title="">DateHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">DateHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода типа <b>V_DATE</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/inthashcode.html" title="">IntHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">IntHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">i</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода типа <b>V_INTEGER</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/numerichashcode.html" title="">NumericHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">NumericHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">nm</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода типа <b>V_MONEY</b> , <b>V_DOUBLE</b> или <b>V_NUMERIC</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/objecthashcode.html" title="">ObjectHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">ObjectHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">obj</span><span class="symbol"> : </span><span class="typeName">Object</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода объекта пользовательского класса
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/stringhashcode.html" title="">StringHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">StringHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">key</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода типа <b>V_STRING</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/tarrayhashcode.html" title="">TArrayHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">TArrayHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода массива <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/timehashcode.html" title="">TimeHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">TimeHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tm</span><span class="symbol"> : </span><span class="typeName">Time</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода типа <b>V_TIME</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/oop/varianthashcode.html" title="">VariantHashCode</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">VariantHashCode</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">val</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция расчета хэшкода произвольного объекта RSL
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/oop/any/any.html" title="">Any</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">Any</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вспомогательный класс с реализованными методами <a href="../../../packages/oop/oop/any/hash.html" title="Link to hash">hash</a>, <a href="../../../packages/oop/oop/any/equals.html" title="Link to equals">equals</a>, <a href="../../../packages/oop/oop/any/tostring.html" title="Link to toString">toString</a> и определенным, но не реализованным <a href="../../../packages/oop/oop/any/compareto.html" title="Link to compareTo">compareTo</a>. Облегчает использование пользовательских классов в пакете <a href="../../../packages/collections/index.html" title="Link to Collections">Collections</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/oop/tuple/tuple.html" title="">Tuple</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">Tuple</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Tupple класс обертка, представлен от Tuple2 до Tuple5
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/oop/tuple1/tuple1.html" title="">Tuple1</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/oop/tuple/tuple.html" title="Link to Tuple">Tuple</a><span class="symbol">) </span><span class="identifier">Tuple1</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">__1</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Tupple1
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/oop/tuple2/tuple2.html" title="">Tuple2</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/oop/tuple/tuple.html" title="Link to Tuple">Tuple</a><span class="symbol">) </span><span class="identifier">Tuple2</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">__1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__2</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Tupple2
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/oop/tuple3/tuple3.html" title="">Tuple3</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/oop/tuple/tuple.html" title="Link to Tuple">Tuple</a><span class="symbol">) </span><span class="identifier">Tuple3</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">__1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__2</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__3</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Tupple3
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/oop/tuple4/tuple4.html" title="">Tuple4</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/oop/tuple/tuple.html" title="Link to Tuple">Tuple</a><span class="symbol">) </span><span class="identifier">Tuple4</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">__1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__2</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__3</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__4</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Tupple4
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/oop/tuple5/tuple5.html" title="">Tuple5</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/oop/oop/tuple/tuple.html" title="Link to Tuple">Tuple</a><span class="symbol">) </span><span class="identifier">Tuple5</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">__1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__2</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__3</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__4</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">__5</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Tupple5
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

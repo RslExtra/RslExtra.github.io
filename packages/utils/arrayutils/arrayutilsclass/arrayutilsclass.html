@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс ArrayUtilsClass</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/arrayutils/index.html" title="ArrayUtils.mac">ArrayUtils.mac</a> /<a href="../../../../packages/utils/arrayutils/arrayutilsclass/arrayutilsclass.html" title="ArrayUtilsClass">ArrayUtilsClass</a>
+</div>
+</div>
+<div class="content">
+<h2>ArrayUtilsClass</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">ArrayUtilsClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+</p><p>
+Класс утилит для удобной работы с массивами типа <a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>.
+Представлен singlton объектом <a href="../../../../packages/utils/arrayutils/arrayutils.html" title="Link to ArrayUtils">ArrayUtils</a>.
+Например чтобы создать массив, необходимо импортировать макрофайл и вызвать метод
+</p>
+<div class="sample">
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-full">
+<pre><code>import "..\\mac\\Extra\\ext_ArrayUtil.mac";
+var myArr = ArrayUtilsof("first el", 2, null);
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+</p>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/addarray.html" title="">addArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">addArray</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">arr2</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет в конец массива <b>arr</b> элементы массива <b>arr2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/contains.html" title="">contains</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">contains</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">compfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если массив <b>arr</b> содержит <b>element</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/containsnull.html" title="">containsNull</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">containsNull</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если массив <b>arr</b> содержит хоть один элемент <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/copy.html" title="">copy</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">copy</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">TArray</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает копию массива <b>arr</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/filter.html" title="">filter</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">filter</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">predicFunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив, состоящий из элементов исходного массива <b>arr</b>, для которых функция-предикат <b>func</b> возвращает <code class="intext">true</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/findinarray.html" title="">findInArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">findInArray</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">find</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">compareFun</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Ищет и возвращает результат поиска в массиве <b>arr</b> объекта или примитива <b>find</b> согласно функции компаратору <b>compareFun</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/indexof.html" title="">indexOf</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">indexOf</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">compfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает индекс элемента массива <b>arr</b> равного <b>element</b>, <b>-1</b> в случае если ничего не найдено
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/isnullorempty.html" title="">isNullOrEmpty</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">isNullOrEmpty</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code>, если массив <b>arr</b> равен <code class="intext">null</code> или размер массива равен 0
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/lastindexof.html" title="">lastIndexOf</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">lastIndexOf</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">compfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен <a href="../../../../packages/utils/arrayutils/arrayutilsclass/indexof.html" title="Link to indexOf">indexOf</a>; но возвращает индекс <b>последнего</b> элемента или -1;
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/map.html" title="">map</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">map</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">mapFunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив преобразованных функцией <b>mapFunc</b> всех элементов исходного массива <b>arr</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/mergearrays.html" title="">mergeArrays</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">mergeArrays</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr1</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">arr2</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">TArray</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает объединённый массив из элементов массивов <b>arr1</b> и <b>arr2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/newiterator.html" title="">newIterator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">newIterator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает итератор подобный <a href="../../../../packages/collections/iterable/iteratorinterface/iteratorinterface.html" title="Link to IteratorInterface">IteratorInterface</a> для работы с массивом <b>arr</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/notnullorempty.html" title="">notNullOrEmpty</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">notNullOrEmpty</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">false</code>, если массив <b>arr</b> равен <code class="intext">null</code> или размер массива равен 0
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/of.html" title="">of</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">of</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">varargs</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">TArray</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив типа <a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a> и заполняет его аргументами
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/reduce.html" title="">reduce</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reduce</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">reduceFunc</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">accumulator</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает результат выполнения функции <b>reduceFunc</b> на элементы исходного массива <b>arr</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/remove.html" title="">remove</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">remove</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">@TArray</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">ind</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Удаляет элемент в массиве <b>arr</b> с индексом <b>ind</b>, "схлопывая" пустоту
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/reverse.html" title="">reverse</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reverse</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Разворачивает массив <b>arr</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/subarray.html" title="">subArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">subArray</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"> : </span><span class="typeName">TArray</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">from</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">to</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив, заполненный элементами исходного массива <b>arr</b> с индекса <b>from</b> (включительно) по индекс <b>to</b> (исключительно)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/arrayutils/arrayutilsclass/toscreen.html" title="">toScreen</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toScreen</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выводит на экран элементы массива <b>arr</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

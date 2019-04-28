@@ -1,0 +1,749 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TreeMap</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/collections/index.html" title="Collections">Collections</a> /<a href="../../../../packages/collections/treemap/index.html" title="TreeMap.mac">TreeMap.mac</a> /<a href="../../../../packages/collections/treemap/treemap/treemap.html" title="TreeMap">TreeMap</a>
+</div>
+</div>
+<div class="content">
+<h2>TreeMap</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../../packages/collections/iterable/mapinterface/mapinterface.html" title="Link to MapInterface">MapInterface</a><span class="symbol">) </span><span class="identifier">TreeMap</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_keyComparator</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Реализация коллекции элементов пары ключ-значении на основе красно-черного дерева.
+Пары располагают в порядке возрастания ключей согласно функции компаратору <b>_keyComparator</b>.
+По умолчанию в качестве ключа используется ненулевой <b>object</b>. В качестве значения может выступать любой тип данных RSL. (примитив, объект, null).
+</p><p>
+Пример использования:
+</p>
+<div class="sample">
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-full">
+<pre><code>var map = TreeMap();     // Инициализируем
+map.setKeyPrimitive();   // Будем использовать примитивные ключи String.
+
+for(var i, 1, 100)
+   map.put("key_" + i, "value is " + i);   // Заполняем
+end;
+
+map.toScreen();                // Выводим на экран
+var val = map.get("key_50");   // Получаем значение по ключу
+println(val);                  // value is 50;
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<!--================== Variables Section ====================-->
+<h3>Переменные класса</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/collections/treemap/treemap/root.html" title="">root</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">root</span>;</code>
+</div>
+<div class="description">
+<p>
+Корневой элемент дерева
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/collections/iterable/iterable/size.html" title="Inherited from Iterable">size</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">size</span>;</code>
+</div>
+<div class="description">
+<p>
+Размер коллекции
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/append.html" title="Inherited from Iterable">append</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">append</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">baseCollectionElement</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Добавлет базовый элемент коллекции, для <a href="../../../../packages/collections/iterable/listinterface/listinterface.html" title="Link to ListInterface">списков</a> и <a href="../../../../packages/collections/iterable/setinterface/setinterface.html" title="Link to SetInterface">множеств</a> это Variant элементы, для <a href="../../../../packages/collections/iterable/mapinterface/mapinterface.html" title="Link to MapInterface">карт</a> это объект типа <a href="../../../../packages/collections/iterable/pair/pair.html" title="Link to Pair">Pair</a> с полями key и value
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/clear.html" title="Inherited from Iterable">clear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">clear</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Удаляет все элементы коллекции
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/containskey.html" title="Inherited from MapInterface">containsKey</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">containsKey</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">key</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code>, если коллекция содержит пару с ключем <b>key</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/containsvalue.html" title="Inherited from MapInterface">containsValue</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">containsValue</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">value</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code>, если коллекция содержит пару со значением равным <b>value</b>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/copy.html" title="Inherited from Iterable">copy</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">copy</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/collections/iterable/iterable/iterable.html" title="link to Iterable"><span class="identifier">Iterable</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает быструю копию исходной коллекции
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/equals.html" title="Inherited from Iterable">equals</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">equals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">otherIterable</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод для проверки на равенство текущей коллекции и <b>otherIterable</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/filter.html" title="Inherited from Iterable">filter</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">filter</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">predicate</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/collections/iterable/iterable/iterable.html" title="link to Iterable"><span class="identifier">Iterable</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает объект того же типа коллекции с элементами отфильтрованными согласно функции предикату <b>predicate</b>
+</p><p>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/foreach.html" title="Inherited from Iterable">forEach</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">forEach</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">func</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вызывает <b>func</b> для каждого элемента массива, возвращает <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/get.html" title="Inherited from MapInterface">get</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">get</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">key</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает значение соответствующее ключу <b>key</b>, если такого ключа не найдено возвращает <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/hash.html" title="Inherited from Iterable">hash</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">hash</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод для расчета хэша коллекции. Хотя он и реализован, не рекомендуется использовать коллекцию как ключ в <a href="../../../../packages/collections/iterable/mapinterface/mapinterface.html" title="Link to MapInterface">MapInterface</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/isempty.html" title="Inherited from Iterable">isEmpty</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">isEmpty</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает <code class="intext">true</code>, если коллекция пуста, иначе возвращает <code class="intext">false</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/join.html" title="Inherited from Iterable">join</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">join</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">_delim</span><span class="symbol"> = </span><span class="defaultValue">","</span><span class="symbol">]</span><span class="symbol">, </span><span class="symbol">[</span><span class="paramName">_prefix</span><span class="symbol"> = </span><span class="defaultValue">"["</span><span class="symbol">]</span><span class="symbol">, </span><span class="symbol">[</span><span class="paramName">_postfix</span><span class="symbol"> = </span><span class="defaultValue">"]"</span><span class="symbol">]</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строку из элементов коллекции, разделенных <b>_delim</b>, начинается с <b>_prefix</b> заканчивается <b>_postfix</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/keys.html" title="Inherited from MapInterface">keys</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">keys</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает массив <a href="../../../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a> состоящий из ключей исходной коллекции
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/map.html" title="Inherited from Iterable">map</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">map</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">mapfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/collections/iterable/iterable/iterable.html" title="link to Iterable"><span class="identifier">Iterable</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает объект того же типа коллекции с элементами преобразованными функцией <b>mapfunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/newentryiterator.html" title="Inherited from MapInterface">newEntryIterator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">newEntryIterator</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый итератор пар
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/newinstance.html" title="Inherited from Iterable">newInstance</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">newInstance</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает новый экземпляр текущей коллекции с теми  же компараторами и функциями проверки на равенство
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/newiterator.html" title="Inherited from Iterable">newIterator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">newIterator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">ind</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/collections/iterable/iteratorinterface/iteratorinterface.html" title="link to IteratorInterface"><span class="identifier">IteratorInterface</span></a></code>
+</div>
+<div class="description">
+<p>
+Возвращает новый итератор начинающий с позиции <b>ind</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/newkeyiterator.html" title="Inherited from MapInterface">newKeyIterator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">newKeyIterator</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый итератор ключей
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/newvalueiterator.html" title="Inherited from MapInterface">newValueIterator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">newValueIterator</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый итератор значений
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/treemap/treemap/put.html" title="">put</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">put</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">key</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">value</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет пару с ключём <b>key</b> и значением <b>value</b> в <b>Treemap</b> и возвращает <code class="intext">null</code>, если в таблице уже существует пара с таким же ключом, значение перезаписывается, а метод возвращает перезаписываемое значение
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/putall.html" title="Inherited from MapInterface">putAll</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">putAll</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">map</span><span class="symbol"> : </span><a href="../../../../packages/collections/iterable/mapinterface/mapinterface.html" title="Link to MapInterface"><span class="typeName">MapInterface</span></a><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Помещает в коллекцию все пары "ключ-значение" из <b>map</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/putitems.html" title="Inherited from MapInterface">putItems</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">putItems</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Помещает в коллекцию все аргументы и возвращает текущую карту
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/reduce.html" title="Inherited from Iterable">reduce</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reduce</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">identity</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">accumulator</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает результат агрегатной функции <b>accumulator</b> на элементы исходного массива
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/remove.html" title="Inherited from MapInterface">remove</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">remove</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">key</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Удаляет и коллекции пару с ключем <b>key</b> и возвращает удаляемое значение
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/replace.html" title="Inherited from MapInterface">replace</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">replace</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">key</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">newValue</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Заменяет значение соответствующее ключу <b>key</b> на <b>newValue</b> и возвращает <code class="intext">true</code>, если ключа не найдено возвращает <code class="intext">false</code>, при этом добавление нового элемента не происходит
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/setkeycomparator.html" title="Inherited from MapInterface">setKeyComparator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setKeyComparator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">kCompareFun</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает функцию-компаратор ключей <b>kCompareFun</b> и возвращает текущую коллекцию
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/setkeyequalsfunc.html" title="Inherited from MapInterface">setKeyEqualsFunc</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setKeyEqualsFunc</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">kEqualsFun</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает функцию проверки на равенство ключей <b>kEqualsFun</b> и возвращает текущую коллекцию
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/treemap/treemap/setkeytype.html" title="">setKeyType</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setKeyType</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">type</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает тип ключа <b>type</b> из языка RSL и возвращает текущий экземпляр
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/setvaluecomparator.html" title="Inherited from MapInterface">setValueComparator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setValueComparator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">vCompareFun</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает функцию-компаратор значений <b>vCompareFun</b> и возвращает текущую коллекцию
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/setvalueequalsfunc.html" title="Inherited from MapInterface">setValueEqualsFunc</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setValueEqualsFunc</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">vEqualsFun</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает функцию проверки на равенство значений <b>vEqualsFun</b> и возвращает текущую коллекцию
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/treemap/treemap/setvaluetype.html" title="">setValueType</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setValueType</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">type</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает тип значений <b>type</b> из языка RSL
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/sum.html" title="Inherited from Iterable">sum</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sum</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает сумму элементов коллекции (только для примитивов)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/sumby.html" title="Inherited from Iterable">sumBy</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sumBy</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_func</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает сумму преобразованных элементов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/sumbyprop.html" title="Inherited from Iterable">sumByProp</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sumByProp</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_propName</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Numeric</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает сумму элементов коллекции по имени свойства объектов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/toarray.html" title="Inherited from Iterable">toArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toArray</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает массив типа <a href="../../../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a> состоящий из элементов исходной коллекции
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/toscreen.html" title="Inherited from Iterable">toScreen</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toScreen</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Выводит коллекцию на экран без переноса строк
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/toscreen2.html" title="Inherited from Iterable">toScreen2</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toScreen2</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Выводит коллекцию на экран с переносом строк
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/iterable/tostream.html" title="Inherited from Iterable">toStream</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toStream</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создает <a href="../../../../packages/streamapi/streamapi/bornstream/bornstream.html" title="Link to BornStream">Stream</a> коллекции
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/collections/iterable/mapinterface/values.html" title="Inherited from MapInterface">values</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">values</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает массив <a href="../../../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a> состоящий из значений исходной коллекции
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

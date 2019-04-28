@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс Logger</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/logr/index.html" title="LogR">LogR</a> /<a href="../../../../packages/logr/logr/logger/logger.html" title="Logger">Logger</a>
+</div>
+</div>
+<div class="content">
+<h2>Logger</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">Logger</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">fullname</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol">[</span><span class="paramName">isOn</span><span class="symbol"> : </span><span class="typeName">Bool</span><span class="symbol"> = </span><span class="defaultValue">true</span><span class="symbol">]</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс для логирования в текстовый файл. Пишет лог каждого пользователя RS-BANK в свои файлы, при том если будет исполняться программа одного пользователяб но с разных треминалок одновременно, коллизии записи не произойдет, т.к создастся отдельный файл.
+</p>
+<!--================== Params Section ====================-->
+<h4>Аргументы конструктора класса</h4>
+<div class="parm-list">
+<div class="parm-item">
+<div class="parm-name"><p>fullname</p></div>
+<div class="parm-value"><p>- обязательный параметр, указывается полный путь до файла лога относительно папки на сервере н.р "..\\WorkFiles\\Logs\\myprog.log" - Тогда созданный лог-файл будет выглядеть например %RS-BankDir%\WorkFiles\Logs\myprog_9999_2.log.</p></div>
+</div>
+<div class="parm-item">
+<div class="parm-name"><p>isOn</p></div>
+<div class="parm-value"><p>Включение/отключения логирования.</p></div>
+</div>
+</div>
+<div class="spacer"></div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/logr/logr/logger/d.html" title="">d</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">d</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">MessageText</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вывод в лог с префиксом (DEBUG)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/logr/logr/logger/e.html" title="">e</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">e</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">MessageText</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вывод в лог с префиксом (ERROR)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/logr/logr/logger/i.html" title="">i</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">i</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">MessageText</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+вывод в лог с префиксом (INFO )
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

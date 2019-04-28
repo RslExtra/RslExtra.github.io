@@ -1,0 +1,893 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TBFileStream</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/streamapi/index.html" title="StreamApi">StreamApi</a> /<a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="TBFileStream">TBFileStream</a>
+</div>
+</div>
+<div class="content">
+<h2>TBFileStream</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../../packages/streamapi/streamapi/bornstream/bornstream.html" title="Link to BornStream">BornStream</a><span class="symbol">) </span><span class="identifier">TBFileStream</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_tbFile</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс для создания стрима из объекта <a href="../../../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TBFile</a>.
+</p>
+<div class="main-tag-panel">
+<div class="tag-item __t0 others tagon" tgname="__t0" title="Без метки"><span>Others</span></div>
+<div class="tag-item __t1 conveyor tagon" tgname="__t1" title=""><span>Conveyor</span></div>
+<div class="tag-item __t2 agregate tagon" tgname="__t2" title=""><span>Agregate</span></div>
+<div class="tag-item __t3 terminal tagon" tgname="__t3" title=""><span>Terminal</span></div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/allmatch.html" title="Inherited from ContinuedStream">allMatch</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">allMatch</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">predicate</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если функция <b>predicate</b> для всех элементов вернет <code class="intext">true</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/anymatch.html" title="Inherited from ContinuedStream">anyMatch</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">anyMatch</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">predicate</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если функция <b>predicate</b> хотябы раз вернет <code class="intext">true</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/collect.html" title="Inherited from ContinuedStream">collect</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">collect</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">collectorObj</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Собирает элементы согласно <b>collectorObj</b>. Заготовленные коллекторы можно посмотреть <a href="../../../../packages/streamapi/collectors/index.html" title="Link to Collectors">StreamApi.#Collectors</a>
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/count.html" title="Inherited from ContinuedStream">count</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">count</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает количество элементов в стриме
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor agregate terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+<div class="tag-mark __t2"><p>agregate</p></div>
+<div class="tag-mark __t3"><p>terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/custom.html" title="Inherited from ContinuedStream">custom</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">custom</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">streamObj</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Позволяет использовать кастомный объект Stream. Для этого необходимо унаследоваться от <a href="../../../../packages/streamapi/streamapi/conveyorstream/conveyorstream.html" title="Link to ConveyorStream">ConveyorStream</a>, <a href="../../../../packages/streamapi/streamapi/agregatestream/agregatestream.html" title="Link to AgregateStream">AgregateStream</a> или <a href="../../../../packages/streamapi/streamapi/terminalstream/terminalstream.html" title="Link to TerminalStream">TerminalStream</a> переопределить необходимые методы и передать экземпляр класса в функцию как <b>streamObj</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/distinct.html" title="Inherited from ContinuedStream">distinct</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">distinct</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Передает только уникальные элементы
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/distinctby.html" title="Inherited from ContinuedStream">distinctBy</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">distinctBy</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">parmfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Передает только уникальные элементы по параметру возвращаемой функцией <b>parmfunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/distinctbyint.html" title="Inherited from ContinuedStream">distinctByInt</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">distinctByInt</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">parmfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Передает только уникальные элементы по параметру типа <b>Integer</b> возвращаемой функцией <b>parmFunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/distinctbystring.html" title="Inherited from ContinuedStream">distinctByString</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">distinctByString</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">parmFunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Передает только уникальные элементы по параметру типа <b>String</b> возвращаемой функцией <b>parmFunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/filter.html" title="Inherited from ContinuedStream">filter</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">filter</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">predicate</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Фильтрует записи согласно функции <b>predicate</b>, т
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/findfirst.html" title="Inherited from ContinuedStream">findFirst</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">findFirst</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">OrElse</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает первый элемент из стрима или <b>OrElse</b> если стрим пустой
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/fixed.html" title="">fixed</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">fixed</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает флаг fix в значение <code class="intext">true</code>; каждая итерация стрима будет возвращать копию буфера таблицу в <a href="../../../../packages/filesanddb/filesanddb/trechandler/trechandler.html" title="Link to TRecHandler">TRecHandler</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/flatmap.html" title="Inherited from ContinuedStream">flatMap</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">flatMap</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">mapfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Разворачивает вложенные stream  в один
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/foreach.html" title="Inherited from ContinuedStream">forEach</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">forEach</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">func</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Для каждого элемента выполняет <b>func</b> и завершает стрим
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/geteq.html" title="">getEQ</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getEQ</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен методу <a href="../../../../packages/filesanddb/filesanddb/tbfile/geteq.html" title="Link to GetEQ">TBFile.getEQ</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/getge.html" title="">getGE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getGE</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен методу <a href="../../../../packages/filesanddb/filesanddb/tbfile/getge.html" title="Link to GetGE">TBFile.getGE</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/getgt.html" title="">getGT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getGT</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен методу <a href="../../../../packages/filesanddb/filesanddb/tbfile/getgt.html" title="Link to GetGT">TBFile.getGT</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/getle.html" title="">getLE</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getLE</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен методу <a href="../../../../packages/filesanddb/filesanddb/tbfile/getle.html" title="Link to GetLE">TBFile.getLE</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/getlt.html" title="">getLT</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getLT</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен методу <a href="../../../../packages/filesanddb/filesanddb/tbfile/getlt.html" title="Link to GetLT">TBFile.getLT</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list agregate">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>Agregate</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/groupby.html" title="Inherited from ContinuedStream">groupBy</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">groupBy</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">parmfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Групирует элементы в структуру типа HashMap<key, List> где key вычисляется функцией parmfunc
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list agregate">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>Agregate</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/groupbyint.html" title="Inherited from ContinuedStream">groupByInt</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">groupByInt</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">parmfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Групирует элементы в структуру типа HashMap<key, List> где key вычисляется функцией parmfunc
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list agregate">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>Agregate</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/groupbystring.html" title="Inherited from ContinuedStream">groupByString</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">groupByString</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">parmfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Групирует элементы в структуру типа HashMap<key, List> где key вычисляется функцией parmfunc
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/limit.html" title="Inherited from ContinuedStream">limit</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">limit</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_count</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Ограничивает переданное количество элементов параметром <b>_count</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/map.html" title="Inherited from ContinuedStream">map</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">map</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">mapfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Преобразует каждый элемент stream согласно <b>mapfunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/max.html" title="Inherited from ContinuedStream">max</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">max</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">comparator</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает максимальное значение согласно <b>comparator</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/min.html" title="Inherited from ContinuedStream">min</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">min</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">comparator</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает минимальное значение согласно <b>comparator</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/nonematch.html" title="Inherited from ContinuedStream">noneMatch</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">noneMatch</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">predicate</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если функция <b>predicate</b> для всех элементов вернет <code class="intext">false</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/once.html" title="Inherited from ContinuedStream">once</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">once</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">oncefunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вызывает функцию <b>oncefunc</b> единожды и возвращает неизменненные элементы
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/peek.html" title="Inherited from ContinuedStream">peek</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">peek</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">peekfunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вызывает для каждого элемента <b>peekfunc</b> и возвращает неизмененный элемент
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/reduce.html" title="Inherited from ContinuedStream">reduce</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reduce</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">identity</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">accumulator</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выполняет агрегатную функцию <b>accumulator</b> с начальным значением <b>identity</b> возвращает результат <b>identity</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/reverse.html" title="">reverse</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reverse</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Курсор бд будет бежать в обратном направлении
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/rewind.html" title="">rewind</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">rewind</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен методу <a href="../../../../packages/filesanddb/filesanddb/tbfile/rewind.html" title="Link to rewind">TBFile.rewind</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/tbfilestream/setkey.html" title="">setKey</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setKey</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">kn</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/streamapi/streamapi/tbfilestream/tbfilestream.html" title="link to TBFileStream"><span class="identifier">TBFileStream</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает новый ключ <b>kn</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/skip.html" title="Inherited from ContinuedStream">skip</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">skip</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_count</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Пропускает первые <b>cnt</b> элементов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list agregate">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>Agregate</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/sorted.html" title="Inherited from ContinuedStream">sorted</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sorted</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">comparator</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Сортирует элементы согласно функции <b>comparator</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/sum.html" title="Inherited from ContinuedStream">sum</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sum</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает сумму для числового стрима
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/sumby.html" title="Inherited from ContinuedStream">sumBy</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sumBy</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">parmFunc</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает сумму по параметру возвращаемого  <b>parmFunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/takewhile.html" title="Inherited from ContinuedStream">takeWhile</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">takeWhile</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">predicate</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Передает элементы дальше пока <b>predicate</b> возвращает <b>true</b>; как только <b>predicate</b> вернет <b>false</b> стрим закончится
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/toarray.html" title="Inherited from ContinuedStream">toArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toArray</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает массив из элементов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list terminal">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t3"><p>Terminal</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/toscreen.html" title="Inherited from ContinuedStream">toScreen</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toScreen</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выводит все элементы на экран и завершает стрим
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list conveyor">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>Conveyor</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/streamapi/streamapi/continuedstream/zipwithindex.html" title="Inherited from ContinuedStream">zipWithIndex</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">zipWithIndex</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">startIndex</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Объединяет каждый элемент с соответсвующим ему индексом в объект <a href="../../../../packages/oop/oop/tuple/tuple.html" title="Link to Tuple">Tuple</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

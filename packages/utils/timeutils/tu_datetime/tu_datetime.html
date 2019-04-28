@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TU_DateTime</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/timeutils/index.html" title="TimeUtils.mac">TimeUtils.mac</a> /<a href="../../../../packages/utils/timeutils/tu_datetime/tu_datetime.html" title="TU_DateTime">TU_DateTime</a>
+</div>
+</div>
+<div class="content">
+<h2>TU_DateTime</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">TU_DateTime</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_dt</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_tm</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_tz</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс обертка для даты/времени. В конструктор передаются необязательные аргументы: дата <b>_dt</b>, время <b>_tm</b> и временная зона <b>_tz</b>.
+После инициализации в полях класса становятся доступными числовые временные значения.
+</p>
+<!--================== Variables Section ====================-->
+<h3>Переменные класса</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/day.html" title="">day</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">day</span>;</code>
+</div>
+<div class="description">
+<p>
+День 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/hour.html" title="">hour</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">hour</span>;</code>
+</div>
+<div class="description">
+<p>
+Час 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/minute.html" title="">minute</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">minute</span>;</code>
+</div>
+<div class="description">
+<p>
+Минута 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/month.html" title="">month</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">month</span>;</code>
+</div>
+<div class="description">
+<p>
+Месяц 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/msec.html" title="">msec</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">msec</span>;</code>
+</div>
+<div class="description">
+<p>
+Миллисекунда 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/sec.html" title="">sec</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">sec</span>;</code>
+</div>
+<div class="description">
+<p>
+Секунда 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/timezone.html" title="">timezone</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">timezone</span>;</code>
+</div>
+<div class="description">
+<p>
+Временная зона 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../../packages/utils/timeutils/tu_datetime/year.html" title="">year</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="keyword">var </span><span class="identifier">year</span>;</code>
+</div>
+<div class="description">
+<p>
+Год 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/equals.html" title="">equals</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">equals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">oth</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code>, если текущая дата равна <b>oth</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/getdate.html" title="">getDate</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getDate</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Date</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает дату
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/getdttm.html" title="">getDtTm</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getDtTm</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает RSL DtTm
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/getgmttimezone.html" title="">getGMTTimeZone</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getGMTTimeZone</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает временную зону в GMT ("GMT+03:00");
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/getisotimezone.html" title="">getISOTimeZone</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getISOTimeZone</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает временную зону в формате ISO 8601 ("+03:00");
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/getrfctimezone.html" title="">getRFCTimeZone</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getRFCTimeZone</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает временную зону в формате RFC 822 ("+0300");
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/gettime.html" title="">getTime</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getTime</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает время
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/intimezone.html" title="">inTimeZone</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">inTimeZone</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tz</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/timeutils/tu_datetime/tu_datetime.html" title="link to TU_DateTime"><span class="identifier">TU_DateTime</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый экземпляр <a href="../../../../packages/utils/timeutils/tu_datetime/tu_datetime.html" title="Link to TU_DateTime">TU_DateTime</a> соответствующий временной зоне <b>tz</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/minustime.html" title="">minusTime</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">minusTime</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tm</span><span class="symbol"> : </span><span class="typeName">Time</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Отнимает время <b>tm</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plusdays.html" title="">plusDays</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusDays</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">d</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет <b>d</b> дней
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plushours.html" title="">plusHours</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusHours</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">h</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет <b>h</b> часов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plusmilliseconds.html" title="">plusMilliSeconds</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusMilliSeconds</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">ms</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет <b>ms</b> миллисекунд
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plusminutes.html" title="">plusMinutes</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusMinutes</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">m</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет <b>m</b> минут
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plusmonthes.html" title="">plusMonthes</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusMonthes</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">m</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет <b>m</b> месяцев
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plusseconds.html" title="">plusSeconds</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusSeconds</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">s</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет <b>s</b> секунд
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plustime.html" title="">plusTime</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusTime</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tm</span><span class="symbol"> : </span><span class="typeName">Time</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет время <b>tm</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/plusyears.html" title="">plusYears</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">plusYears</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">y</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Прибавляет <b>y</b> лет
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/setdate.html" title="">setDate</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setDate</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает дату <b>dt</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_datetime/settime.html" title="">setTime</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setTime</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tm</span><span class="symbol"> : </span><span class="typeName">Time</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливате время <b>tm</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

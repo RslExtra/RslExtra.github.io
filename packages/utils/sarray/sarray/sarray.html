@@ -1,0 +1,757 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс SArray</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/sarray/index.html" title="SArray.mac">SArray.mac</a> /<a href="../../../../packages/utils/sarray/sarray/sarray.html" title="SArray">SArray</a>
+</div>
+</div>
+<div class="content">
+<h2>SArray</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><span class="identifier">TArray</span><span class="symbol">) </span><span class="identifier">SArray</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Расширение стандартного класса <a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>.
+Массив объявляется стандартным способом, за исключением случая с предопределенными значениями.
+</p><p>
+Пример использования:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>var arr = SArray(1, 2, 3);   // Объявляем и инициализируем массив
+arr.addAll(10, 20, 30);      // Добавляем в конец еще 3 элемента
+arr.push(1);                 // Добавляем еще 1 в конец
+println(arr[0]);             // Можем получать значение стандартным способом
+var ind = arr.indexOf(3);    // Находим элемент
+arr.remove(ind);             // Удаляем элемент под индексом
+
+// Выстраиваем цепочки
+arr.addAll(0, 1, 25, 10)        // Добавляем еще элементы
+   .distinct()                  // Получаем уникальные
+   .filter(Predicates.GE(10))   // Фильтруем список, отбираем только элементы больше 10
+   .sort()                      // Сортируем
+   .slice(0, 3)                 // Отбираем три меньших элемента
+   .toScreen();                 // Выводим на экран
+
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/utils/SArray.mac";
+import "../mac/extra/utils/Functions.mac";
+import bankinter;
+var arr = SArray(1, 2, 3);   // Объявляем и инициализируем массив
+arr.addAll(10, 20, 30);      // Добавляем в конец еще 3 элемента
+arr.push(1);                 // Добавляем еще 1 в конец
+println(arr[0]);             // Можем получать значение стандартным способом
+var ind = arr.indexOf(3);    // Находим элемент
+arr.remove(ind);             // Удаляем элемент под индексом
+
+// Выстраиваем цепочки
+arr.addAll(0, 1, 25, 10)        // Добавляем еще элементы
+   .distinct()                  // Получаем уникальные
+   .filter(Predicates.GE(10))   // Фильтруем список, отбираем только элементы больше 10
+   .sort()                      // Сортируем
+   .slice(0, 3)                 // Отбираем три меньших элемента
+   .toScreen();                 // Выводим на экран
+
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<div class="main-tag-panel">
+<div class="tag-item __t0 others tagon" tgname="__t0" title="Без метки"><span>Others</span></div>
+<div class="tag-item __t1 builder tagon" tgname="__t1" title=""><span>builder</span></div>
+<div class="tag-item __t2 chain tagon" tgname="__t2" title=""><span>chain</span></div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/add.html" title="">add</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">add</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">ind</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет <b>element</b> на позицию <b>ind</b>, сдвигая последующие элементы вправо
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/addall.html" title="">addAll</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">addAll</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">enumerable</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет в исходный массив множество элементов из <b>enumerable</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/addarray.html" title="">addArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">addArray</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет элементы массива <b>arr</b> в конец массива
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/additems.html" title="">addItems</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">addItems</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет в исходный массив множество элементов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/clear.html" title="">clear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">clear</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Очищает и возвращает текущий массив
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list chain">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>chain</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/concat.html" title="">concat</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">concat</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив, состоящий из элементов исходного и массива <b>arr</b>, исходный массив и массив <b>arr</b> изменены не будут
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/contains.html" title="">contains</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">contains</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">equalsfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code>, если массив содержит элемент <b>element</b>, согласно функции <b>equalsfunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/containsall.html" title="">containsAll</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">containsAll</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">enumerable</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">equalsfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code>, если массив содержит все элементы из <b>enumerable</b> согласно функции <b>equalsFun</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list chain">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>chain</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/distinct.html" title="">distinct</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">distinct</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">equalsfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив <a href="../../../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a> уникальных элементов исходного массива согласно функции <b>equalsfunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list chain">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>chain</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/distinctsort.html" title="">distinctSort</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">distinctSort</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">compfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив <a href="../../../../packages/utils/sarray/sarray/sarray.html" title="Link to SArray">SArray</a> уникальных элементов исходного массива в порядке возрастания согласно функции-компаратору <b>compfunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list chain">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>chain</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/filter.html" title="">filter</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">filter</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">predicFunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив, состоящий из элементов исходного массива <b>arr</b>, для которых функция-предикат <b>predicFunc</b> возвращает <code class="intext">true</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/foreach.html" title="">forEach</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">forEach</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">func</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вызывает <b>func</b> для каждого элемента массива, возвращает <code class="intext">null</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/get.html" title="">get</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">get</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">ind</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает элемент под индексом <b>ind</b> или бросает ошибку, если индекс выходит за границы массива
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/getfirst.html" title="">getFirst</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getFirst</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает первый элемент массива или бросает ошибку, если массив пустой
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/getlast.html" title="">getLast</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getLast</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает последний элемент массива или бросает ошибку, если массив пустой
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/indexof.html" title="">indexOf</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">indexOf</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">equalsfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает индекс элемента массива <b>arr</b> равного <b>element</b>, <b>-1</b> в случае если ничего не найдено
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/isempty.html" title="">isEmpty</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">isEmpty</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если массив е содержит элементов, <code class="intext">false</code> в противном случае
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/issorted.html" title="">isSorted</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">isSorted</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">compfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если массив отсортирован согласно функции-компаратору <b>compfunc</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/join.html" title="">join</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">join</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">sep</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"> = </span><span class="defaultValue">""</span><span class="symbol">]</span><span class="symbol">, </span><span class="symbol">[</span><span class="paramName">pre</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"> = </span><span class="defaultValue">""</span><span class="symbol">]</span><span class="symbol">, </span><span class="symbol">[</span><span class="paramName">pos</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"> = </span><span class="defaultValue">""</span><span class="symbol">]</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Объединяет элементы масcива в строку, разделяя их значением <b>sep</b>, значение <b>pre</b> - будет добавлено в начало строки, значение <b>post</b> в конце
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/lastindexof.html" title="">lastIndexOf</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">lastIndexOf</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">equalsfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Метод аналогичен <a href="../../../../packages/utils/sarray/sarray/indexof.html" title="Link to indexOf">indexOf</a>; но возвращает индекс <b>последнего</b> элемента или -1;
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list chain">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>chain</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/map.html" title="">map</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">map</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">mapFunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив преобразованных функцией <b>mapFunc</b> всех элементов исходного массива
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/newiterator.html" title="">newIterator</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">newIterator</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/arrayiterator/arrayiterator.html" title="link to ArrayIterator"><span class="identifier">ArrayIterator</span></a></code>
+</div>
+<div class="description">
+<p>
+Возвращает итератор <a href="../../../../packages/utils/sarray/arrayiterator/arrayiterator.html" title="Link to ArrayIterator">ArrayIterator</a> 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/peek.html" title="">peek</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">peek</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает последний элемент массива (не удаляя) или <code class="intext">null</code>, если массив пустой
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/poll.html" title="">poll</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">poll</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Удаляет и возвращает последний элемент массива, возвращает <code class="intext">null</code> если массив пустой
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/pop.html" title="">pop</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">pop</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Удаляет и возвращает последний элемент массива, бросает ошибку если массив пустой
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/push.html" title="">push</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">push</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">element</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Добавляет <b>element</b> в конец массива
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/reduce.html" title="">reduce</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reduce</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">identity</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">accumulator</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает результат агрегатной функции <b>accumulator</b> на элементы исходного массива
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/remove.html" title="">remove</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">remove</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">ind</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Удаляет и возвращает элемент под индексом <b>ind</b>, "схлопывая дырку" в массиве
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/reverse.html" title="">reverse</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reverse</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+"Разворачивает" исходный массив
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list chain">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t2"><p>chain</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/slice.html" title="">slice</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">slice</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">from</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">to</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает новый массив состоящий из элементов текущего с индекса <b>from</b> (включительно) по индекс <b>to</b>(исключительно)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="__tag-list builder">
+</div>
+<div class="tag-pan">
+<div class="tag-mark __t1"><p>builder</p></div>
+</div>
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/sort.html" title="">sort</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sort</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">compfunc</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Сортирует исходный массив согласно функции-компаратору <b>compfunc</b> и возвращает ссылку на исходный массив
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/toscreen.html" title="">toScreen</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toScreen</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выводит элементы массива на экран разделенные ", " внутри скобок <code class="intext">[]</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/toscreen2.html" title="">toScreen2</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toScreen2</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Выводит элементы массива на экран, каждый с новой строки
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/tostream.html" title="">toStream</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toStream</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создает <a href="../../../../packages/streamapi/streamapi/bornstream/bornstream.html" title="Link to BornStream">Stream</a> объект
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/sarray/totarray.html" title="">toTArray</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toTArray</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">TArray</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создаёт массив типа <a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a> и копирует в него все элементы исходного массива
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Метод LambdaClass.create</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/lambda/index.html" title="Лямбда-функции">Лямбда-функции</a> /<a href="../../../../packages/lambda/lambda/lambdaclass/lambdaclass.html" title="LambdaClass">LambdaClass</a> /<a href="../../../../packages/lambda/lambda/lambdaclass/create.html" title="create">create</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>LambdaClass.create ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">create</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">lambdaText</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Возвращает ссылку на сгенерированный метод согласно выражению <b>lambdaText</b>.
+Функция генерируется по следующим алгоритмам. Слева от стрелки через запятую перечисляются параметры функции с любыми именами, затем идет стрелка (по умолчанию <b>-></b>), справа от стрелки идет тело функции. Последнее выражение после <b>;</b> (если имеется) передается в <b>return</b>. Для удобства чтения, внутри текста лямбды вместо символа двойных кавычех рекомендуется использовать символ одинарных.
+</p><p>
+Например:
+</p>
+<div class="sample">
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-full">
+<pre><code>var ref = Lambda("i, j -> println(i + ' and ' + j); i+j");
+/*
+   В результате будет сгененирована функция вида
+   Macro lam(i, j)
+      println(i + " and " + j);
+      return (i+j);
+   End;
+*/
+
+// Вызываем функцию
+var result = ExecMacro2(ref, 10, 23);  // 10 and 23
+println(result);   // 33
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+Если фукция с одним аргументом, есть возможность упростить запись лямбда-выражения, передав только тело функции, где именем входного параметра будет являться <b>it</b>. Например:
+</p>
+<div class="sample">
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-full">
+<pre><code>var sqRef = Lambda("it*it");      // Функция возведения в квадрат
+var b = ExecMacro2(sqRef, 5);
+println(b);                     // 25
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

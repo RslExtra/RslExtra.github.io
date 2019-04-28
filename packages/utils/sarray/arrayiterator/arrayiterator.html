@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс ArrayIterator</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/sarray/index.html" title="SArray.mac">SArray.mac</a> /<a href="../../../../packages/utils/sarray/arrayiterator/arrayiterator.html" title="ArrayIterator">ArrayIterator</a>
+</div>
+</div>
+<div class="content">
+<h2>ArrayIterator</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">ArrayIterator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_arr</span><span class="symbol"> : </span><span class="typeName">@TArray</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс итератора массива. Для получения итератора необходимо вызвать метод <a href="../../../../packages/utils/sarray/sarray/newiterator.html" title="Link to newIterator">SArray.newIterator()</a>.
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>var arr = SArray(1, 2, 3, 4, 5);  // Инициализируем массив
+var itr = arr.newIterator();      // Получаем итератор
+while(itr.hasnext())              // Пока итератор может что-то вернуть
+  var el = itr.next();           // Получаем следующий элемент итератора
+  println(el);                   // Выводим на экран
+end;
+
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/utils/SArray.mac";
+var arr = SArray(1, 2, 3, 4, 5);  // Инициализируем массив
+var itr = arr.newIterator();      // Получаем итератор
+while(itr.hasnext())              // Пока итератор может что-то вернуть
+  var el = itr.next();           // Получаем следующий элемент итератора
+  println(el);                   // Выводим на экран
+end;
+
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/arrayiterator/add.html" title="">add</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">add</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">el</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Добавляет в массив новое значение
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/arrayiterator/hasnext.html" title="">hasNext</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">hasNext</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает <code class="intext">true</code>, если имеется доступный для получения следующий элемент массива, <code class="intext">false</code> в противном случае
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/arrayiterator/hasprev.html" title="">hasPrev</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">hasPrev</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает <code class="intext">true</code>, если имеется доступный для получения предыдущий элемент массива, <code class="intext">false</code> в противном случае
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/arrayiterator/next.html" title="">next</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">next</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает следующий элемент
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/arrayiterator/prev.html" title="">prev</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">prev</span><span class="symbol"> (</span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+Возвращает предыдущий элемент
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/arrayiterator/remove.html" title="">remove</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">remove</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Удаляет текущий элемент, не оставляя дырку, перемещаясь на шаг назад, т.е следующим вызовом <a href="../../../../packages/utils/sarray/arrayiterator/next.html" title="Link to next">next</a> переходит на следующий после удаляемого элемент
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/sarray/arrayiterator/set.html" title="">set</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">set</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">el</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+Помещает в ячейку массива новое значение
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

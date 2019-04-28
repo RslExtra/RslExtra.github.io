@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Функция VariantEquals</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/oop/index.html" title="OOP">OOP</a> /<a href="../../../packages/oop/comparators/index.html" title="Comparators.mac">Comparators.mac</a> /<a href="../../../packages/oop/comparators/variantequals.html" title="VariantEquals">VariantEquals</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>VariantEquals ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">VariantEquals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o1</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">o2</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Универсальная функция проверки на равенство двух переменных RSL <b>o1</b> и <b>o2</b>.
+</p><p>
+Функция работает по следующему принципу:
+</p>
+<ul>
+<li> Если аргументы разных типов вернет <code class="intext">false</code>,</li>
+<li> Если одного примитивного типа, пернет результат сравнения через <code class="intext">==</code>.</li>
+<li> Для объектных аргументов, попробует вызвать метод <code class="intext">equals(obj) : Bool</code>, а затем если не будет найден <b>compareTo</b>. Если ни один из методов не определен бросит ошибку.</li>
+<li> Если аргументы равны <code class="intext">null</code>, вернет <code class="intext">true</code>.</li>
+<li> Если аргументы типа <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a> или наследного класса, вернет результат функции <a href="../../../packages/oop/comparators/tarrayequals.html" title="Link to TArrayEquals">TArrayEquals</a>, которая попарно сравнивает элементы обоих массивов.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

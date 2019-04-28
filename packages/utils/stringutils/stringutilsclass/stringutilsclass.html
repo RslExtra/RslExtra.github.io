@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс StringUtilsClass</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/stringutils/index.html" title="StringUtils.mac">StringUtils.mac</a> /<a href="../../../../packages/utils/stringutils/stringutilsclass/stringutilsclass.html" title="StringUtilsClass">StringUtilsClass</a>
+</div>
+</div>
+<div class="content">
+<h2>StringUtilsClass</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">StringUtilsClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс строковых утилит, представлен инстансом <a href="../../../../packages/utils/stringutils/stringutils.html" title="Link to StringUtils">StringUtils</a>.
+</p>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/commonprefix.html" title="">commonPrefix</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">commonPrefix</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str1</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">str2</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает общий префикс строк <b>str1</b> и <b>str2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/commonsuffix.html" title="">commonSuffix</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">commonSuffix</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str1</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">str2</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает общий суффикс строк <b>str1</b> и <b>str2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/fillbetween.html" title="">fillBetween</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">fillBetween</span><span class="symbol"> (</span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">str1</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">str2</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">minLength</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">padChar</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><br><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строку дополненную символами <b>padChar</b> между строк <b>str1</b> и <b>str2</b> до размера <b>minLength</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/indent.html" title="">indent</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">indent</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">n</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строку содержащуюю <b>ind</b> пробелов оступа и сконкатенированную строку <b>str</b>; если <b>ind</b> меньше 0, удалит это количество пробелов в начале строки, если это возможно
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/indexrev.html" title="">IndexRev</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">IndexRev</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">srcStr</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">findStr</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">startPos</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает последнюю позицию подстроки <b>findStr</b> в строке <b>srcStr</b> или 0, в случае отсутствия вхождений
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/isnullorblank.html" title="">isNullOrBlank</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">isNullOrBlank</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если <b>str</b> равна <code class="intext">null</code> или не содержит значимых символов
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/isnullorempty.html" title="">isNullOrEmpty</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">isNullOrEmpty</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если <b>str</b> равна <code class="intext">null</code> или пуста
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/notnullorempty.html" title="">notNullOrEmpty</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">notNullOrEmpty</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает <code class="intext">true</code> если <b>str</b> не равна <code class="intext">null</code> и не пуста
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/padend.html" title="">padEnd</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">padEnd</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">minLength</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">padChar</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строку дополненную символами <b>padChar</b> в конец исходной строки <b>str</b> до размера <b>minLength</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/padstart.html" title="">padStart</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">padStart</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">minLength</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">padChar</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строку дополненную символами <b>padChar</b> в начало исходной строки <b>str</b> до размера <b>minLength</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/padstartend.html" title="">padStartEnd</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">padStartEnd</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">minLength</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">padChar</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строку дополненную символами <b>padChar</b> равномерно в конец и начало исходной строки <b>str</b> до размера <b>minLength</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/repeat.html" title="">repeat</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">repeat</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">count</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строку  сконкатенированную <b>count</b> раз исходной строки <b>str</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/reverse.html" title="">reverse</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reverse</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает развернутую строку <b>str</b>;
+</p><p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/stringutils/stringutilsclass/split.html" title="">split</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">split</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">delim</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../../packages/utils/sarray/sarray/sarray.html" title="link to SArray"><span class="identifier">SArray</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает массив строк, после разделения исходной строки <b>str</b> по <b>delim</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

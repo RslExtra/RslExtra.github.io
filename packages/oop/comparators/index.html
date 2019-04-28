@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Comparators.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/oop/index.html" title="OOP">OOP</a> /<a href="../../../packages/oop/comparators/index.html" title="Comparators.mac">Comparators.mac</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>Comparators.mac</h1>
+</div>
+<div class="macro-path"><p>..\mac\extra\OOP\Comparators.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+Реализованные функции-компараторы (compare и equals).
+</p>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Depended Section ====================-->
+<div class="depend-section close">
+<div class="depend-header">
+<h3>Известные зависимые</h3>
+<div class="depend-hider"><p></p></div>
+</div>
+<div class="depend-list">
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/arraylist/index.html" title="Link to ..\mac\extra\collections\ArrayList.mac">ArrayList.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация списка на основе массива <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/arraymap/index.html" title="Link to ..\mac\extra\collections\ArrayMap.mac">ArrayMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Файл включает в себя реализацию интерфейса <b>map</b> через два массива
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/collections/index.html" title="Link to ..\mac\extra\collections\Collections.mac">Collections.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека коллекций для языка RSL
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/collectors/index.html" title="Link to ..\mac\extra\StreamApi\Collectors.mac">Collectors.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Объекты коллекторы
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/extra/extra/index.html" title="Link to ..\mac\extra\Extra.mac">Extra.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека вспомогательных классов и функций в ООП и функциональном стиле
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/hashmap/index.html" title="Link to ..\mac\extra\collections\HashMap.mac">HashMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через хэш-таблицу
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/hashset/index.html" title="Link to ..\mac\extra\collections\HashSet.mac">HashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>set</b>, коллекцию уникальных значений
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/iterable/index.html" title="Link to ..\mac\extra\collections\Iterable.mac">Iterable.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashmap/index.html" title="Link to ..\mac\extra\collections\LinkedHashMap.mac">LinkedHashMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классов <a href="../../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashset/index.html" title="Link to ..\mac\extra\collections\LinkedHashSet.mac">LinkedHashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию <a href="../../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html" title="Link to LinkedHashSet">LinkedHashSet</a> - коллекции уникальных элементов с сохранением порядка добавления
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedlist/index.html" title="Link to ..\mac\extra\collections\LinkedList.mac">LinkedList.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию связного списка <a href="../../../packages/collections/linkedlist/linkedlist/linkedlist.html" title="Link to LinkedList">LinkedList</a> и отсортированного связного списка <a href="../../../packages/collections/linkedlist/sortedlinkedlist/sortedlinkedlist.html" title="Link to SortedLinkedList">SortedLinkedList</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/runit/memdb/index.html" title="Link to ..\mac\extra\RUnit\MemDB.mac">MemDB.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+InMemory Database. Позволяет динамически создавать, заполнять структуру со схожим интерфейсом <a href="../../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TbFile</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/oop/oop/index.html" title="Link to ..\mac\extra\OOP\OOP.mac">OOP.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Вспомогательные классы и функции для реализации ООП паттернов
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/runit/runit/index.html" title="Link to ..\mac\extra\RUnit\RUnit.mac">RUnit.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для легкого тестирования пользовательских классов, макросов и модулей, написанных на RSL
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/streamapi/index.html" title="Link to ..\mac\extra\StreamApi\Stream.mac">Stream.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация Stream Api
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/utils/timeutils/index.html" title="Link to ..\mac\extra\utils\TimeUtils.mac">TimeUtils.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Утилиты для работы с датой и временем
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/treemap/index.html" title="Link to ..\mac\extra\collections\TreeMap.mac">TreeMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через красно-черное дерево
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/treeset/index.html" title="Link to ..\mac\extra\collections\TreeSet.mac">TreeSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Реализация отсортированной коллекции уникальных значений
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Функции</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_comparenullable.html" title="">CF_CompareNullable</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_CompareNullable</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">el1</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">el2</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+Сравнение примитивных типов с учетом возможности аргументов == Null 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_compareprimitive.html" title="">CF_ComparePrimitive</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_ComparePrimitive</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">el1</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">el2</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Сравнение двух примитивных типов средствами языка (==, >, <)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_comparestrignorecase.html" title="">CF_CompareStrIgnoreCase</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_CompareStrIgnoreCase</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">s1</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">s2</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Сравнение двух строк без учета регистра
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_comparetoimpl.html" title="">CF_CompareToImpl</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_CompareToImpl</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">o2</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Сравнение двух экземпляров пользовательского класса, реализующих метод <code class="intext">compareTo(otherObj) : Integer</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_equalsbycompareto.html" title="">CF_EqualsByCompareTo</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_EqualsByCompareTo</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o1</span><span class="symbol"> : </span><span class="typeName">Object</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">o2</span><span class="symbol"> : </span><span class="typeName">Object</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка равенства двух экземпляров пользовательского класса, реализующих метод <code class="intext">compareTo(otherObj) : Integer</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_equalsimpl.html" title="">CF_EqualsImpl</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_EqualsImpl</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o1</span><span class="symbol"> : </span><span class="typeName">Object</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">o2</span><span class="symbol"> : </span><span class="typeName">Object</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка равенства двух экземпляров пользовательского класса, реализующих метод <code class="intext">Equals(otherObj) : Bool</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_equalsprimitive.html" title="">CF_EqualsPrimitive</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_EqualsPrimitive</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">p1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">p2</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция проверки на равенство двух примитивов одного типа
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_objectequals.html" title="">CF_ObjectEquals</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_ObjectEquals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">o2</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Проверка объектов на полное равенство по свойствам (в т
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/cf_strequalsignorecase.html" title="">CF_StrEqualsIgnoreCase</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">CF_StrEqualsIgnoreCase</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">s1</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">s2</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция проверки на равенство двух строк без учета регистра
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/tarrayequals.html" title="">TArrayEquals</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">TArrayEquals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr1</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">arr2</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Функция эквивалентности двух массивов <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Последовательно вызывает для каждой пары элементов массивов <a href="../../../packages/oop/comparators/variantequals.html" title="Link to VariantEquals">VariantEquals</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/variantcompare.html" title="">VariantCompare</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">VariantCompare</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o1</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">o2</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Универсальная функция-компаратор для двух переменных RSL <b>o1</b> и <b>o2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/oop/comparators/variantequals.html" title="">VariantEquals</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">VariantEquals</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">o1</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">o2</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Универсальная функция проверки на равенство двух переменных RSL <b>o1</b> и <b>o2</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/comparators/cf_objectcomparator/cf_objectcomparator.html" title="">CF_ObjectComparator</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">CF_ObjectComparator</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">varargs</span><span class="symbol">]</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Объект-компаратор генерирует метод-компаратор и предоставляет ссылку на него методом <a href="../../../packages/oop/comparators/cf_objectcomparator/getfunc.html" title="Link to getFunc">getFunc</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/comparators/cf_objectcomparator2/cf_objectcomparator2.html" title="">CF_ObjectComparator2</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">CF_ObjectComparator2</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">obj</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Объект-компаратор генерирует метод-компаратор и предоставляет ссылку на него методом <a href="../../../packages/oop/comparators/cf_objectcomparator2/getfunc.html" title="Link to getFunc">getFunc</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/oop/comparators/cf_pairscomparator/cf_pairscomparator.html" title="">CF_PairsComparator</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">CF_PairsComparator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">keyComparator</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Объект для сравнения объектов типа <a href="../../../packages/collections/iterable/pair/pair.html" title="Link to Pair">Pair</a> по ключу согласно функции <b>keyComparator</b>. Методом <a href="../../../packages/oop/comparators/cf_pairscomparator/getfunc.html" title="Link to getFunc">getFunc()</a> возвращается необходимая функция компаратор
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

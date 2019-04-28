@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TimeUtilsClass</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/timeutils/index.html" title="TimeUtils.mac">TimeUtils.mac</a> /<a href="../../../../packages/utils/timeutils/timeutilsclass/timeutilsclass.html" title="TimeUtilsClass">TimeUtilsClass</a>
+</div>
+</div>
+<div class="content">
+<h2>TimeUtilsClass</h2>
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="identifier">TimeUtilsClass</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс утилит, представлен синглтоном <a href="../../../../packages/utils/timeutils/timeutils.html" title="Link to TimeUtils">TimeUtils</a>.
+</p>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getdayofyear.html" title="">getDayOfYear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getDayOfYear</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает порядковый номер дня в году для даты <b>dt</b> (начиная с 1)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getendmonth.html" title="">getEndMonth</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getEndMonth</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">monthOff</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Date</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает дату, соответствующую последнему дню месяца переданной даты <b>dt</b>, также можно указать сдвиг месяца, целое число <b>monthOff</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getendyear.html" title="">getEndYear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getEndYear</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">yearOff</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Date</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает дату, соответствующую последнему  дню в году переданной даты <b>dt</b>, также можно указать сдвиг месяца, целое число <b>yearOff</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getnumweekinmonth.html" title="">getNumWeekInMonth</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getNumWeekInMonth</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">locale</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает порядковый номер недели в месяце для даты <b>dt</b> для локали <b>locale</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getnumweekinyear.html" title="">getNumWeekInYear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getNumWeekInYear</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">locale</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает порядковый номер недели в году для даты <b>dt</b> для локали <b>locale</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getshortweekday.html" title="">getShortWeekDay</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getShortWeekDay</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">locale</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает сокращенное название для недели для даты <b>dt</b> для локали <b>locale</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getstartmonth.html" title="">getStartMonth</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getStartMonth</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">monthOff</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Date</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает дату, соответствующую первому дню месяца переданной даты <b>dt</b>, также можно указать сдвиг месяца, целое число <b>monthOff</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getstartyear.html" title="">getStartYear</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getStartYear</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">yearOff</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Date</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает дату, соответствующую первому дню в году переданной даты <b>dt</b>, также можно указать сдвиг месяца, целое число <b>yearOff</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getweekday.html" title="">getWeekDay</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getWeekDay</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">locale</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает полное название для недели для даты <b>dt</b> для локали <b>locale</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getweekdaynum.html" title="">getWeekDayNum</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getWeekDayNum</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">locale</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает порядковый номер дня недели для даты <b>dt</b> для локали <b>locale</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/timeutilsclass/getweekdaynuminmonth.html" title="">getWeekDayNumInMonth</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">getWeekDayNumInMonth</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"> : </span><span class="typeName">Date</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает порядковый номер текущего дня недели в месяце для даты <b>dt</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

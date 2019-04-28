@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Метод SArray.reduce</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/sarray/index.html" title="SArray.mac">SArray.mac</a> /<a href="../../../../packages/utils/sarray/sarray/sarray.html" title="SArray">SArray</a> /<a href="../../../../packages/utils/sarray/sarray/reduce.html" title="reduce">reduce</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>SArray.reduce ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reduce</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">identity</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">accumulator</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="spacer"></div>
+<!--================== Params Section ====================-->
+<h4>Параметры функции</h4>
+<div class="parm-list">
+<div class="parm-item">
+<div class="parm-name"><p>identity</p></div>
+<div class="parm-value"><p>начальное значение</p></div>
+</div>
+<div class="parm-item">
+<div class="parm-name"><p>accumulator</p></div>
+<div class="parm-value"><p>функция-редюсер</p></div>
+</div>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Возвращает результат агрегатной функции <b>accumulator</b> на элементы исходного массива.
+<b>identity</b> - начальное значение.
+</p><p>
+Пример:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>// Прибавляет каждое число el к начальному ident
+Macro sumReduce(ident, el)
+    return ident + el;
+End;
+
+var arr = SArray(1, 2, 3, 4);
+var res = arr.reduce(0, @sumReduce);
+println(res);    //10
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/utils/SArray.mac";
+// Прибавляет каждое число el к начальному ident
+Macro sumReduce(ident, el)
+    return ident + el;
+End;
+
+var arr = SArray(1, 2, 3, 4);
+var res = arr.reduce(0, @sumReduce);
+println(res);    //10
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+Пример с предопределенными функциями:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "../mac/extra/utils/Functions.mac";     // Импортируем генераторы
+
+var arr = SArray(1, 2, 3, 4);
+var res = arr.reduce(0, Accums.sum);
+var mn = arr.reduce(null, Accums.min);         // Минимальное значение
+var mx = arr.reduce(null, Accums.max);         // Максимальное
+var minInd = arr.reduce(null, Accums.minInd);  // Индекс миниального
+var maxInd = arr.reduce(null, Accums.maxInd);  // Индекс максимального
+
+println(res);       //10
+println(mn);        // 1Ц
+println(mx);        // 4
+println(minInd);    // 0
+println(maxInd);    // 3
+
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/utils/SArray.mac";
+import "../mac/extra/utils/Functions.mac";     // Импортируем генераторы
+
+var arr = SArray(1, 2, 3, 4);
+var res = arr.reduce(0, Accums.sum);
+var mn = arr.reduce(null, Accums.min);         // Минимальное значение
+var mx = arr.reduce(null, Accums.max);         // Максимальное
+var minInd = arr.reduce(null, Accums.minInd);  // Индекс миниального
+var maxInd = arr.reduce(null, Accums.maxInd);  // Индекс максимального
+
+println(res);       //10
+println(mn);        // 1Ц
+println(mx);        // 4
+println(minInd);    // 0
+println(maxInd);    // 3
+
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+</p>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

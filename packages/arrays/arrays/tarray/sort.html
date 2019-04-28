@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Метод TArray.sort</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/rsllib/index.html" title="Стандартные библиотеки">Стандартные библиотеки</a> /<a href="../../../../packages/rsllang/index.html" title="Проблемно-ориентированный язык RSL">Проблемно-ориентированный язык RSL</a> /<a href="../../../../packages/constructions/index.html" title="Конструкции языка RSL">Конструкции языка RSL</a> /<a href="../../../../packages/arrays/index.html" title="Определение массивов">Определение массивов</a> /<a href="../../../../packages/arrays/arrays/tarray/tarray.html" title="TArray">TArray</a> /<a href="../../../../packages/arrays/arrays/tarray/sort.html" title="sort">sort</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>TArray.sort ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">sort</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">callback</span><span class="symbol"> : </span><span class="typeName">variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">data</span><span class="symbol"> : </span><span class="typeName">variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Процедура выполняет сортировку массива в соответствии с порядком, определяемым пользовательским обработчиком. В случае успешного завершения возвращает TRUE. При неудаче FASE. Причиной неудачи могут быть неверно заданные параметры.
+</p><p>
+Параметр <b>callback</b> принимает пользовательский обработчик сравнения двух элементов массива, имеющий прототип:
+</p><p>
+<code class="intext">macro Compare (left: variant, right: variant, data: variant): integer</code>
+</p><p>
+Если левый элемент больше правого необходимо вернуть значений "> 0", если меньше "< 0". Если элементы равны, необходимо вернуть "0".
+</p><p>
+Этот обработчик может быть задан строкой с именем глобальной процедуры RSL, ссылкой на процедуру, либо ссылкой на метод класса.
+</p><p>
+Параметр <b>data</b> передаётся из процедуры сортировки в пользовательский обработчик в качестве параметра data.
+</p>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

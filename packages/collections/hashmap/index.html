@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HashMap.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/collections/index.html" title="Collections">Collections</a> /<a href="../../../packages/collections/hashmap/index.html" title="HashMap.mac">HashMap.mac</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>HashMap.mac</h1>
+</div>
+<div class="macro-path"><p>..\mac\extra\collections\HashMap.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+Файл включает в себя реализацию классического интерфейса <b>map</b> через хэш-таблицу.
+Операции поиска, вставки и удаления осуществляются за <b>O(1)</b> в лучшем случае и <b>O(n)</b> в худшем, при неправильной подобранной хэш-функции.
+</p><p>
+</p>
+<div class="see-also">
+<p><b>См. также:</b></p>
+<div class="see-item"><a href="../../../packages/collections/treemap/treemap/treemap.html" title="Link to TreeMap">Collections.TreeMap</a></div>
+</div>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/iterable/index.html" title="Link to Undefined">iterable.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/lambda/lambda/index.html" title="Link to Undefined">lambda.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для динамического создания функций из строковых шаблонов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/comparators/index.html" title="Link to Undefined">comparators.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализованные функции-компараторы (compare и equals)
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/exceptions/index.html" title="Link to Undefined">exceptions.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация исключений и блоков try/catch/finally
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/oop/index.html" title="Link to Undefined">oop.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Вспомогательные классы и функции для реализации ООП паттернов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/sortingfunc/index.html" title="Link to Undefined">sortingfunc.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Релизация функций для сортировки массива
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/sarray/index.html" title="Link to Undefined">sarray.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Расширение стандартного класса <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Реализует всю базовую функциональность, за исключением переопределенного метода <a href="../../../packages/utils/sarray/sarray/sort.html" title="Link to sort">sort()</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/stringutils/index.html" title="Link to Undefined">stringutils.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Полезные утилиты для работы со строковыми переменными
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">bankinter</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rsexts</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Depended Section ====================-->
+<div class="depend-section close">
+<div class="depend-header">
+<h3>Известные зависимые</h3>
+<div class="depend-hider"><p></p></div>
+</div>
+<div class="depend-list">
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/collections/index.html" title="Link to ..\mac\extra\collections\Collections.mac">Collections.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека коллекций для языка RSL
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/collectors/index.html" title="Link to ..\mac\extra\StreamApi\Collectors.mac">Collectors.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Объекты коллекторы
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/extra/extra/index.html" title="Link to ..\mac\extra\Extra.mac">Extra.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека вспомогательных классов и функций в ООП и функциональном стиле
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/hashset/index.html" title="Link to ..\mac\extra\collections\HashSet.mac">HashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классического интерфейса <b>set</b>, коллекцию уникальных значений
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashmap/index.html" title="Link to ..\mac\extra\collections\LinkedHashMap.mac">LinkedHashMap.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию классов <a href="../../../packages/collections/linkedhashmap/linkedhashmap/linkedhashmap.html" title="Link to LinkedHashMap">LinkedHashMap</a>
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/collections/linkedhashset/index.html" title="Link to ..\mac\extra\collections\LinkedHashSet.mac">LinkedHashSet.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+Файл включает в себя реализацию <a href="../../../packages/collections/linkedhashset/linkedhashset/linkedhashset.html" title="Link to LinkedHashSet">LinkedHashSet</a> - коллекции уникальных элементов с сохранением порядка добавления
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/streamapi/streamapi/index.html" title="Link to ..\mac\extra\StreamApi\Stream.mac">Stream.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Реализация Stream Api
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--================== Constant Section ====================-->
+<h3>Глобальные константы</h3>
+<div class="field-list">
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../packages/collections/hashmap/default_init_capacity.html" title="">DEFAULT_INIT_CAPACITY</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">const </span><span class="identifier">DEFAULT_INIT_CAPACITY</span><span class="symbol"> = </span><span class="symbol">256</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вместимость хэш-таблицы по умолчанию
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="field-item list-item">
+<div class="list-item-wrapper">
+<div class="field-name"><a href="../../../packages/collections/hashmap/default_load_factor.html" title="">DEFAULT_LOAD_FACTOR</a></div>
+<div class="field-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">const </span><span class="identifier">DEFAULT_LOAD_FACTOR</span><span class="symbol"> = </span><span class="symbol">0.1</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Load Factor по умолчанию
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Функции</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/collections/hashmap/inthashmap.html" title="">IntHashMap</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">IntHashMap</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_InitialCapacity</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_LoadFactor</span><span class="symbol"> : </span><span class="typeName">Double</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="link to HashMap"><span class="identifier">HashMap</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создаёт и возращает <a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="Link to HashMap">HashMap</a> для работы с ключами типа <b>Integer</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/collections/hashmap/objecthashmap.html" title="">ObjectHashMap</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">ObjectHashMap</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_InitialCapacity</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_LoadFactor</span><span class="symbol"> : </span><span class="typeName">Double</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="link to HashMap"><span class="identifier">HashMap</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создаёт и возращает <a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="Link to HashMap">HashMap</a> для работы с ключами объектного типа
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/collections/hashmap/stringhashmap.html" title="">StringHashMap</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">StringHashMap</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_InitialCapacity</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_LoadFactor</span><span class="symbol"> : </span><span class="typeName">Double</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="link to HashMap"><span class="identifier">HashMap</span></a></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Создаёт и возращает <a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="Link to HashMap">HashMap</a> для работы с ключами типа <b>String</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/collections/hashmap/tolowpwr2.html" title="">toLowPwr2</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">toLowPwr2</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">cap</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Integer</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает целое число ближайшее к <b>cap</b>, являющееся степенью 2
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/collections/hashmap/hashmapentry/hashmapentry.html" title="">HashMapEntry</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/collections/iterable/pair/pair.html" title="Link to Pair">Pair</a><span class="symbol">) </span><span class="identifier">HashMapEntry</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">k</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">v</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_hash</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс узла хэш-таблицы
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/collections/hashmap/hashmap/hashmap.html" title="">HashMap</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/collections/iterable/mapinterface/mapinterface.html" title="Link to MapInterface">MapInterface</a><span class="symbol">) </span><span class="identifier">HashMap</span><span class="symbol"> (</span><span class="symbol">[</span><span class="paramName">_InitialCapacity</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol">]</span><span class="symbol">, </span><span class="symbol">[</span><span class="paramName">_LoadFactor</span><span class="symbol"> : </span><span class="typeName">Double</span><span class="symbol">]</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Реализация коллекции элементов пары ключ-значении на основе хэш-таблицы
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/collections/hashmap/hashiterator/hashiterator.html" title="">HashIterator</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/collections/iterable/iteratorinterface/iteratorinterface.html" title="Link to IteratorInterface">IteratorInterface</a><span class="symbol">) </span><span class="identifier">HashIterator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_map</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс итератора HashMap
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/collections/hashmap/valueiterator/valueiterator.html" title="">ValueIterator</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/collections/hashmap/hashiterator/hashiterator.html" title="Link to HashIterator">HashIterator</a><span class="symbol">) </span><span class="identifier">ValueIterator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_map</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс итератора значений
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/collections/hashmap/keyiterator/keyiterator.html" title="">KeyIterator</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/collections/hashmap/hashiterator/hashiterator.html" title="Link to HashIterator">HashIterator</a><span class="symbol">) </span><span class="identifier">KeyIterator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_map</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс итератора ключей
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/collections/hashmap/entryiterator/entryiterator.html" title="">EntryIterator</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><a href="../../../packages/collections/hashmap/hashiterator/hashiterator.html" title="Link to HashIterator">HashIterator</a><span class="symbol">) </span><span class="identifier">EntryIterator</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_map</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс итератора узлов
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

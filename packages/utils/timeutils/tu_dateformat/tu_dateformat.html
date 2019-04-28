@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Класс TU_DateFormat</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/timeutils/index.html" title="TimeUtils.mac">TimeUtils.mac</a> /<a href="../../../../packages/utils/timeutils/tu_dateformat/tu_dateformat.html" title="TU_DateFormat">TU_DateFormat</a>
+</div>
+</div>
+<div class="content">
+<h2>TU_DateFormat</h2>
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">TU_DateFormat</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_pattern</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">_locale</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Класс временного формата. В конструктор предается маска формата <b>_pattern</b> и, опционально, локаль (по умолчанию Locales.RU).
+</p><p>
+Пример использования:
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>
+var ruformat = TU_DateFormat("yyyy-MM-dd'T'HH:mm:ss.S");
+var strDateTime = "2014-12-09T13:50:51.644000Z";
+var dt = ruformat.parse(strDateTime);     // Парсим дату/время со строки
+println(dt.getDate);
+println(dt.getTime);
+
+var curDT = TU_DateTime(date(), time());
+var curStr = ruformat.format(curDT);
+println(curStr);        // Выведет текущую дату/время в нашем формате
+
+var enformat = TU_DateFormat("EEE, MMM d, ''yy", locales.US);
+var curStrEN = enformat.format(curDt);
+println(curStrEN);      // Выведет текущую дату вроде Thu, Apr 18, '19
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\mac\\extra\\utils\\timeutils.mac";
+
+var ruformat = TU_DateFormat("yyyy-MM-dd'T'HH:mm:ss.S");
+var strDateTime = "2014-12-09T13:50:51.644000Z";
+var dt = ruformat.parse(strDateTime);     // Парсим дату/время со строки
+println(dt.getDate);
+println(dt.getTime);
+
+var curDT = TU_DateTime(date(), time());
+var curStr = ruformat.format(curDT);
+println(curStr);        // Выведет текущую дату/время в нашем формате
+
+var enformat = TU_DateFormat("EEE, MMM d, ''yy", locales.US);
+var curStrEN = enformat.format(curDt);
+println(curStrEN);      // Выведет текущую дату вроде Thu, Apr 18, '19
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<!--================== Macro Section ====================-->
+<h3>Методы</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_dateformat/format.html" title="">format</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">format</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">dt</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">String</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Возвращает строковое представление согласно шаблону для <b>dt</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_dateformat/parse.html" title="">parse</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">parse</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">str</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Парсит строку <b>str</b> и возвращает объект типа <a href="../../../../packages/utils/timeutils/tu_datetime/tu_datetime.html" title="Link to TU_DateTime">TU_DATETIME</a>. Получить дату и время можно методами <a href="../../../../packages/utils/timeutils/tu_datetime/getdate.html" title="Link to getDate">TU_DATETIME.getDate</a>, <a href="../../../../packages/utils/timeutils/tu_datetime/gettime.html" title="Link to getTime">TU_DATETIME.getTime</a>, <a href="../../../../packages/utils/timeutils/tu_datetime/getdttm.html" title="Link to getDtTm">TU_DATETIME.getDtTm</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_dateformat/setpasserror.html" title="">setPassError</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setPassError</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">pass</span><span class="symbol"> : </span><span class="typeName">Bool</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+При передаче <b>pass</b> = true, вместо ошибки исполнения при парсинге даты, вернутся нулевые даты и время
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../../packages/utils/timeutils/tu_dateformat/settimezone.html" title="">setTimeZone</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">setTimeZone</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">tz</span><span class="symbol"> : </span><span class="typeName">Integer</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Устанавливает временную зону <b>tz</b> (например 1000 для Владивостока)
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

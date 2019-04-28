@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MemDB.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../packages/runit/index.html" title="RUnit. Библиотека для юнит-тестирования.">RUnit. Библиотека для юнит-тестирования.</a> /<a href="../../../packages/runit/memdb/index.html" title="MemDB.mac">MemDB.mac</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>MemDB.mac</h1>
+</div>
+<div class="macro-path"><p>..\mac\extra\RUnit\MemDB.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+InMemory Database. Позволяет динамически создавать, заполнять структуру со схожим интерфейсом <a href="../../../packages/filesanddb/filesanddb/tbfile/tbfile.html" title="Link to TbFile">TbFile</a>.
+Предназначен для тестирования работы макросов с предопределенным значением полей.
+</p><p>
+Пример использования:
+</p><p>
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "../mac/extra/RUnit/MemDb.mac";
+
+// Билдим структуру
+var struct = StructureBuilder("MyDb")
+                  .addField("Referenc", V_INTEGER, 4)
+                  .addField("CodClient", V_INTEGER, 4)
+                  .addField("Account", V_STRING, 20)
+                  .addField("Open_date", V_DATE)
+                  .addField("Close_date", V_DATE)
+                  .addField("SumRest", V_MONEY)
+                  .build();                         // Не забываем сбилдить
+
+// Создаем бд и добавляем ключи
+var db = MemDB(struct)
+                  .addKey(8, "-Referenc")           // Так сообщаем, что в ключе это поле должно быть в порядке убывания
+                  .addKey(12, "Close_date", "Referenc");
+
+db.addRow(200000, 200001, "40817000000000132", date(01,03,2019), date(21,03,2019), $1500);
+db.addRow(100001, 300002, "40817000000000133", date(01,03,2019), date(21,03,2019), $1600);
+db.addRow(100002, 200001, "40817000000000134", date(02,01,2019), date(10,02,2019), $1700);
+db.addRow(100003, 123132, "40817000000000135", date(02,01,2019), date(0,0,0)     , $1800);
+db.addRow(100004, 420528, "40817000000000136", date(03,01,2019), date(10,02,2019), $1800);
+
+
+// Далее работаем как обычно
+db.keyNum = 12;
+db.rewind();
+db.clear();
+db.rec.Close_date = Date(12, 02, 2019);
+if (db.getGE())
+   while (true)
+      println(db.rec.Account);
+      if (Not(db.next)) break; end;
+   end;
+end;
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "../mac/extra/RUnit/MemDb.mac";
+
+// Билдим структуру
+var struct = StructureBuilder("MyDb")
+                  .addField("Referenc", V_INTEGER, 4)
+                  .addField("CodClient", V_INTEGER, 4)
+                  .addField("Account", V_STRING, 20)
+                  .addField("Open_date", V_DATE)
+                  .addField("Close_date", V_DATE)
+                  .addField("SumRest", V_MONEY)
+                  .build();                         // Не забываем сбилдить
+
+// Создаем бд и добавляем ключи
+var db = MemDB(struct)
+                  .addKey(8, "-Referenc")           // Так сообщаем, что в ключе это поле должно быть в порядке убывания
+                  .addKey(12, "Close_date", "Referenc");
+
+db.addRow(200000, 200001, "40817000000000132", date(01,03,2019), date(21,03,2019), $1500);
+db.addRow(100001, 300002, "40817000000000133", date(01,03,2019), date(21,03,2019), $1600);
+db.addRow(100002, 200001, "40817000000000134", date(02,01,2019), date(10,02,2019), $1700);
+db.addRow(100003, 123132, "40817000000000135", date(02,01,2019), date(0,0,0)     , $1800);
+db.addRow(100004, 420528, "40817000000000136", date(03,01,2019), date(10,02,2019), $1800);
+
+
+// Далее работаем как обычно
+db.keyNum = 12;
+db.rewind();
+db.clear();
+db.rec.Close_date = Date(12, 02, 2019);
+if (db.getGE())
+   while (true)
+      println(db.rec.Account);
+      if (Not(db.next)) break; end;
+   end;
+end;
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<!--================== Import Section ====================-->
+<div class="import-section close">
+<div class="import-header">
+<h3>Импорты</h3>
+<div class="import-hider"><p></p></div>
+</div>
+<div class="import-list">
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/arraylist/index.html" title="Link to Undefined">arraylist.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация списка на основе массива <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/collections/iterable/index.html" title="Link to Undefined">iterable.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Базовые классы и функции коллекций
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/lambda/lambda/index.html" title="Link to Undefined">lambda.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для динамического создания функций из строковых шаблонов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/comparators/index.html" title="Link to Undefined">comparators.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Реализованные функции-компараторы (compare и equals)
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/exceptions/index.html" title="Link to Undefined">exceptions.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Реализация исключений и блоков try/catch/finally
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/oop/index.html" title="Link to Undefined">oop.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Вспомогательные классы и функции для реализации ООП паттернов
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/oop/sortingfunc/index.html" title="Link to Undefined">sortingfunc.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Релизация функций для сортировки массива
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/sarray/index.html" title="Link to Undefined">sarray.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+</p><p>
+Расширение стандартного класса <a href="../../../packages/arrays/arrays/tarray/tarray.html" title="Link to TArray">TArray</a>. Реализует всю базовую функциональность, за исключением переопределенного метода <a href="../../../packages/utils/sarray/sarray/sort.html" title="Link to sort">sort()</a>
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><a href="../../../packages/utils/stringutils/index.html" title="Link to Undefined">stringutils.mac</a></div>
+<div class="import-descr">
+<p>
+</p><p>
+Полезные утилиты для работы со строковыми переменными
+</p>
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">bankinter</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rcw</p></div>
+<div class="import-descr">
+</div>
+</div>
+<div class="import-item">
+<div class="import-name"><p class="import-name-p">rsexts</p></div>
+<div class="import-descr">
+</div>
+</div>
+</div>
+</div>
+<!--================== Depended Section ====================-->
+<div class="depend-section close">
+<div class="depend-header">
+<h3>Известные зависимые</h3>
+<div class="depend-hider"><p></p></div>
+</div>
+<div class="depend-list">
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/extra/extra/index.html" title="Link to ..\mac\extra\Extra.mac">Extra.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека вспомогательных классов и функций в ООП и функциональном стиле
+</p>
+</div>
+</div>
+<div class="depend-item">
+<div class="depend-name"><a href="../../../packages/runit/runit/index.html" title="Link to ..\mac\extra\RUnit\RUnit.mac">RUnit.mac</a></div>
+<div class="depend-descr">
+<p>
+</p><p>
+</p><p>
+Библиотека для легкого тестирования пользовательских классов, макросов и модулей, написанных на RSL
+</p>
+</div>
+</div>
+</div>
+</div>
+<!--================== Classes Section ====================-->
+<h3>Классы</h3>
+<div class="class-list">
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/runit/memdb/mocktrechandler/mocktrechandler.html" title="">MockTRecHandler</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="modifier">Private </span><span class="keyword">Class </span><span class="symbol"> (</span><span class="identifier">TRecHandler</span><span class="symbol">) </span><span class="identifier">MockTRecHandler</span><span class="symbol"> (</span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">strName</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">altDic</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">_file</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">_index</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">_offs</span><span class="symbol"></span><span class="symbol">, </span><br>&nbsp&nbsp&nbsp&nbsp<span class="symbol"></span><span class="paramName">isFixed</span><span class="symbol"></span><br><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Расширение стандартного класса <a href="../../../packages/filesanddb/filesanddb/trechandler/trechandler.html" title="Link to TRecHandler">TRecHandler</a> для работы с <a href="../../../packages/runit/memdb/memdb/memdb.html" title="Link to MemDB">MemDB</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/runit/memdb/structurebuilder/structurebuilder.html" title="">StructureBuilder</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">StructureBuilder</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_name</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Билдер структуры во время исполнения программы
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="class-item list-item">
+<div class="list-item-wrapper">
+<div class="class-name"><a href="../../../packages/runit/memdb/memdb/memdb.html" title="">MemDB</a></div>
+<div class="class-value">
+<div class="signature">
+<code><span class="keyword">Class </span><span class="identifier">MemDB</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">_struct</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Класс таблицы в памяти. Единственным и обязательным параметром является структура <b>_struct</b> типа <a href="../../../packages/runit/memdb/mocktrechandler/mocktrechandler.html" title="Link to MockTRecHandler">MockTRecHandler</a>. Которая определяет структуру полей бд, которую необходимо предварительно собрать с помощью <a href="../../../packages/runit/memdb/structurebuilder/structurebuilder.html" title="Link to StructureBuilder">StructureBuilder</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Метод ArrayUtilsClass.reduce</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../../packages/userlib/index.html" title="Библиотеки пользователя">Библиотеки пользователя</a> /<a href="../../../../packages/extra/index.html" title="Extra">Extra</a> /<a href="../../../../packages/utils/index.html" title="Полезные утилиты">Полезные утилиты</a> /<a href="../../../../packages/utils/arrayutils/index.html" title="ArrayUtils.mac">ArrayUtils.mac</a> /<a href="../../../../packages/utils/arrayutils/arrayutilsclass/arrayutilsclass.html" title="ArrayUtilsClass">ArrayUtilsClass</a> /<a href="../../../../packages/utils/arrayutils/arrayutilsclass/reduce.html" title="reduce">reduce</a>
+</div>
+</div>
+<div class="content">
+<div class="func-decl">
+<h2>ArrayUtilsClass.reduce ()</h2>
+</div>
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">reduce</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">arr</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">reduceFunc</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">accumulator</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="spacer"></div>
+<!--================== Params Section ====================-->
+<h4>Параметры функции</h4>
+<div class="parm-list">
+<div class="parm-item">
+<div class="parm-name"><p>arr</p></div>
+<div class="parm-value"><p>исходный массив</p></div>
+</div>
+<div class="parm-item">
+<div class="parm-name"><p>reduceFunc</p></div>
+<div class="parm-value"><p>функция редюсер</p></div>
+</div>
+<div class="parm-item">
+<div class="parm-name"><p>accumulator</p></div>
+<div class="parm-value"><p>начальное значение</p></div>
+</div>
+</div>
+<div class="spacer"></div>
+<p>
+</p><p>
+Возвращает результат выполнения функции <b>reduceFunc</b> на элементы исходного массива <b>arr</b>.
+</p><p>
+Пример:
+</p>
+<div class="sample">
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-full">
+<pre><code>Macro sumReduce(acc, el)
+   return acc + el;
+End;
+
+var arr = ArrayUtilsof(1,2,3,4);
+var res = ArrayUtilsreduce(arr, @sumReduce, 0);
+println(res);    //10
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../../js/index.js"></script>
+</body>
+</html>

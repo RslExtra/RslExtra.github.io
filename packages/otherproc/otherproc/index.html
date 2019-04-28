@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OtherProc.mac</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+<link rel="shortcut icon" href="">
+</head>
+<body>
+<div class="global-layout">
+<div id="relative-path" value="../../../"></div>
+<header>
+<div class="container">
+<div class="heading clearfix">
+<div class="logo">RDoc</div>
+<nav class="nav-menu">
+<div class="menu">
+<a class="nav-links" href="../../../index.html">Home</a>
+<a class="nav-links" href="https://github.com/RslExtra/Extra">GitHub</a>
+<div class="search-button">
+<img src="../../../images/search_grey.png" id="search__btn" alt="Поиск"> </img>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<section id="docs__content">
+<div class="container">
+<div class="page-panel">
+<div class="docs-breadcrumps">
+<a href="../../../packages/rsllib/index.html" title="Стандартные библиотеки">Стандартные библиотеки</a> /<a href="../../../packages/rsllang/index.html" title="Проблемно-ориентированный язык RSL">Проблемно-ориентированный язык RSL</a> /<a href="../../../packages/inbuildproc/index.html" title="Встроенные процедуры">Встроенные процедуры</a> /<a href="../../../packages/otherproc/index.html" title="Другие процедуры">Другие процедуры</a>
+</div>
+</div>
+<div class="content">
+<div class="file-decl">
+<div class="decl-title">
+<h1>OtherProc.mac</h1>
+</div>
+<div class="macro-path"><p>..\mac\RslLib\STDLIB\InbuildProc\OtherProc.mac</p></div>
+</div>
+<p>
+</p><p>
+</p>
+<p>
+</p><p>
+</p>
+<!--================== Macro Section ====================-->
+<h3>Функции</h3>
+<div class="func-list">
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/otherproc/otherproc/debugbreak.html" title="">DebugBreak</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">DebugBreak</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Если в системе установлен отладчик RSL, то эта процедура вызывает прерывание исполнения RSL программы и активизацию отладчика на следующей после DebugBreak инструкции
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/otherproc/otherproc/execexp.html" title="">ExecExp</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">ExecExp</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">string</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Процедура возвращает результат вычисления выражения <b>string</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/otherproc/otherproc/execmacro.html" title="">ExecMacro</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">ExecMacro</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">string</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Bool</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Данная процедура вызывает для выполнения процедуру, заданную в качестве первого параметра string
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/otherproc/otherproc/execmacro2.html" title="">ExecMacro2</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">ExecMacro2</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">string</span><span class="symbol"></span><span class="symbol">)</span><span class="symbol"> : </span><span class="identifier">Variant</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Процедура вызывает процедуру <b>string</b> и возвращает значение, которое возвращает запускаемая процедура
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="func-item list-item">
+<div class="list-item-wrapper">
+<div class="func-name"><a href="../../../packages/otherproc/otherproc/runerror.html" title="">RunError</a></div>
+<div class="func-value">
+<div class="signature">
+<code><span class="keyword">macro </span><span class="identifier">RunError</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">mes</span><span class="symbol"> : </span><span class="typeName">String</span><span class="symbol"></span><span class="symbol">, </span><span class="symbol"></span><span class="paramName">userObj</span><span class="symbol"> : </span><span class="typeName">Variant</span><span class="symbol"></span><span class="symbol">)</span></code>
+</div>
+<div class="description">
+<p>
+</p><p>
+Вызывает аварийной завершение RSL программы
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer>
+<div class="container">
+<div class="footer-terms">
+<div class="terms-copyright">
+<p>Licensed under the <a href="https://github.com/RslExtra/Extra/blob/master/LICENSE" title="Apache2 license">Apache2 license</a></p>
+</div>
+<div class="terms-author">
+<p>Developed by <a href="mailto:maratkhv@mail.ru">Dzhanybaev M.P.</a></p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../js/index.js"></script>
+</body>
+</html>
