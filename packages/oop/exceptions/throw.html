@@ -44,7 +44,51 @@
 <p>
 </p><p>
 Бросает исключение <b>_exception</b>. Вызывает функцию <a href="../../../packages/otherproc/otherproc/runerror.html" title="Link to RunError">RunError</a> передавая в качестве параметров текст исключения и объект исключения.
+Также желательно выходить из функции после Throw например так <code class="intext">return Throw(IllegalStateException())</code>.
+</p><p>
 </p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>// Пример функции возведения Integer в квадрат
+Macro mysqr(p)
+   if (ValType(p) != V_INTEGER)
+      Throw(IllegalArgumentException("Не верный тип " + p));
+      return; // Обязательно выходим из процедуры
+   end;
+   return p * p;
+End;
+
+var a = mysqr(5);     // ok
+var b = mysqr(null);  // Error
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\mac\\extra\\OOP\\Exceptions.mac";
+// Пример функции возведения Integer в квадрат
+Macro mysqr(p)
+   if (ValType(p) != V_INTEGER)
+      Throw(IllegalArgumentException("Не верный тип " + p));
+      return; // Обязательно выходим из процедуры
+   end;
+   return p * p;
+End;
+
+var a = mysqr(5);     // ok
+var b = mysqr(null);  // Error
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
 </div>
 </div>
 </section>

@@ -76,6 +76,113 @@
 Использование библиотеки помогает существенно сократить время написания аналитических отчетов (время исполнения чаще всего тоже), однако при использовании "на постоянку" желательно не использовать лямбды, чтобы не использовать HDD (все лямбды можно описать как маленькие функции).
 </p><p>
 В виду того, что RSL - динамически типизирован, рекомендуется потренироваться в использовании на языке со статической типизацией (Java, Scala, Kotlin, C#).
+</p><p>
+Пример1 (подсчет количества символов в текстовом файле без учета регистра):
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "..\\mac\\extra\\StreamApi\\Stream.mac";
+
+var fl = TStreamDoc("../mac/Extra/_samples/stream/testText.txt", "R", "rsansi");
+var res = StreamOf(fl)                    // Создаем стрим строк файла
+            .flatMap("l -> StreamOf(l)")  // преобразуем в стрим символов
+            .collect(Collectors.counting("StrUpr(it)", V_STRING)) // Собираем в LinkedHasMap
+            .sort();                      // Сортируем по ключу (символу)
+
+res.toScreen2();
+println("total: " + res.sumByProp("value"));
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\mac\\extra\\StreamApi\\Stream.mac";
+
+var fl = TStreamDoc("../mac/Extra/_samples/stream/testText.txt", "R", "rsansi");
+var res = StreamOf(fl)                    // Создаем стрим строк файла
+            .flatMap("l -> StreamOf(l)")  // преобразуем в стрим символов
+            .collect(Collectors.counting("StrUpr(it)", V_STRING)) // Собираем в LinkedHasMap
+            .sort();                      // Сортируем по ключу (символу)
+
+res.toScreen2();
+println("total: " + res.sumByProp("value"));
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
+Пример2 (Поиск дупликатов в бд client.dbt)
+</p>
+<div class="sample">
+<div class="code-panel">
+<div class="code-hider"><p>+</p></div>
+</div>
+<div class="code-container">
+<div class="code-accent">
+<img src="../../images/copy_grey.png" alt="copy sample"></img>
+</div>
+<div class="code-holder">
+<div class="code-lines-short">
+<pre><code>import "..\\mac\\extra\\StreamApi\\Stream.mac";
+import bankInter;
+
+var db_client = Tbfile("client.dbt", "R",  0, null, "bank.def");
+
+var arr = StreamOf(db_client)                    // Создаём stream из файла бд
+            .rewind()
+            .map("Tupple2(it.Name_Client, it.Code)")
+            .groupByString("StrUpr(it._1)")
+            .filter("p -> p.value.size > 1")
+            .map("it.value")
+            .toArray();          // Соберём в массив
+
+// Выведем на экран
+for (var i, 0, arr.size-1, 1)
+   println(i + 1 + " : ");
+   for (var t, arr[i])
+      println("   (" + t._2 + ")" + t._1);
+   end;
+end;
+</code></pre>
+</div>
+<div class="code-lines-full hide">
+<pre><code>import "..\\mac\\extra\\StreamApi\\Stream.mac";
+import bankInter;
+
+var db_client = Tbfile("client.dbt", "R",  0, null, "bank.def");
+
+var arr = StreamOf(db_client)                    // Создаём stream из файла бд
+            .rewind()
+            .map("Tupple2(it.Name_Client, it.Code)")
+            .groupByString("StrUpr(it._1)")
+            .filter("p -> p.value.size > 1")
+            .map("it.value")
+            .toArray();          // Соберём в массив
+
+// Выведем на экран
+for (var i, 0, arr.size-1, 1)
+   println(i + 1 + " : ");
+   for (var t, arr[i])
+      println("   (" + t._2 + ")" + t._1);
+   end;
+end;
+</code></pre>
+</div>
+</div>
+</div>
+<div class="popup">Успешно скопировано в буфер обмена</div>
+</div>
+<p>
+</p><p>
 </p>
 </div>
 <!--================== Macrofile Section ====================-->

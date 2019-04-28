@@ -38,40 +38,13 @@
 <h2>CallR2M ()</h2>
 </div>
 <div class="signature">
-<code><span class="keyword">macro </span><span class="identifier">CallR2M</span><span class="symbol"> (</span><span class="symbol">)</span></code>
+<code><span class="keyword">macro </span><span class="identifier">CallR2M</span><span class="symbol"> (</span><span class="symbol"></span><span class="paramName">oPtr</span><span class="symbol"></span><span class="symbol">)</span></code>
 </div>
 <div class="spacer"></div>
 <p>
 </p><p>
-Процедура вызывает метод oPtr, заданный в виде ссылки типа MethodRef.
-</p><p>
-Перед использованием этой процедуры необходимо убедиться, что объект, для которого вызывается метод, существует. Вызов метода для несуществующего объекта приведет к разрушению программы.
-</p><p>
-Пример:
+Процедура вызывает метод <b>oPtr</b>, заданный в виде ссылки типа MethodRef.
 </p>
-<div class="sample">
-<div class="code-container">
-<div class="code-accent">
-<img src="../../../images/copy_grey.png" alt="copy sample"></img>
-</div>
-<div class="code-holder">
-<div class="code-lines-full">
-<pre><code>class Test
-macro Method1 (par)
-return Ret Val + par
-end;
-end;
-
-var obj = Test;
-var ptr = R2M (obj, Method1 );
-
-println (CallR2M (ptr, Test Param );
-</code></pre>
-</div>
-</div>
-</div>
-<div class="popup">Успешно скопировано в буфер обмена</div>
-</div>
 </div>
 </div>
 </section>

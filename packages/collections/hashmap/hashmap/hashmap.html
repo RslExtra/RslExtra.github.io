@@ -62,12 +62,11 @@
 </div>
 <div class="code-holder">
 <div class="code-lines-full">
-<pre><code>var map = HashMap();   // Хэш-таблица с ключом типа String
+<pre><code>var map = HashMap();   // Хэш-таблица с ключом типа Variant
 
-var objmap = HashMap().setKeyType(V_GENOBJ); // Хэш-таблица с ключем объектного типа
+var objmap = HashMap().setKeyType(V_GENOBJ);   // Хэш-таблица с ключем объектного типа
 
-var intmap = HashMap.setKeyType(V_INTEGER);
-
+var intmap = IntHashMap(10000, 0.3);    // Хэш-таблица с ключем типа Integer, вместимостью 10000
 </code></pre>
 </div>
 </div>
@@ -90,11 +89,11 @@ calcHash() : Integer    - вычисление хэша объекта
 <div class="parm-list">
 <div class="parm-item">
 <div class="parm-name"><p>_InitialCapacity</p></div>
-<div class="parm-value"><p>начальная вместимость таблицы, при null значение будет равно DEFAULT_INIT_CAPACITY = 256</p></div>
+<div class="parm-value"><p>начальная вместимость таблицы, при null значение будет равно [DEFAULT_INIT_CAPACITY] = 256</p></div>
 </div>
 <div class="parm-item">
 <div class="parm-name"><p>_LoadFactor</p></div>
-<div class="parm-value"><p>начальный фактор загрузки, при null значение будет равно DEFAULT_LOAD_FACTOR = 0.1</p></div>
+<div class="parm-value"><p>начальный фактор загрузки, при null значение будет равно [DEFAULT_LOAD_FACTOR] = 0.1</p></div>
 </div>
 </div>
 <div class="spacer"></div>
@@ -592,7 +591,7 @@ calcHash() : Integer    - вычисление хэша объекта
 <div class="description">
 <p>
 </p><p>
-Устанавливает ссылку на хэшфункцию <b>kHashFun</b>
+Устанавливает ссылку на функцию расчета хэша ключа <b>kHashFun</b>
 </p>
 </div>
 </div>
